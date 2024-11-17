@@ -1,0 +1,22 @@
+target-version = "py311"
+
+[lint]
+select = ["ALL"]
+ignore = [
+    "ERA001",  # Commented-out code.
+    
+    "S101",  # Use of `assert` statement.
+    "RET504",  # Assignment right before return.
+    
+]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = [
+    "ALL",
+    "COM812", # Add missing commas automatically.
+]
+unfixable = []
+
+[format]
+# Like Black, use double quotes for strings.
+quote-style = "double"

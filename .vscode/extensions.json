@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "bernhard-42.ocp-cad-viewer",
+        "tamasfe.even-better-toml",
+        "charliermarsh.ruff",
+        "mtsmfm.vscode-stl-viewer",
+        "ms-python.python",
+        "visualstudioexptteam.vscodeintellicode",
+        "ms-python.vscode-pylance",
+        "paulober.pico-w-go"
+    ]
+}
