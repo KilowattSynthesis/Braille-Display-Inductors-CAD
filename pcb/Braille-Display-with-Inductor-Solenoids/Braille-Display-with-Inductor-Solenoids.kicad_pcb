@@ -174,7 +174,7 @@
 	(net 92 "/SW_1")
 	(net 93 "/SW_2")
 	(net 94 "Net-(D1-A)")
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "028cbeeb-e908-4eb6-8b43-4963fd6aec5b")
@@ -184,7 +184,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "c7ac66b5-c94c-4c7c-8286-0bc146b68f0d")
+			(uuid "ccc8f511-4d59-4def-ada3-3bfb7449e9fe")
 			(effects
 				(font
 					(size 1 1)
@@ -197,7 +197,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "90cc2453-21da-4398-b7c2-5a892cebe389")
+			(uuid "fd456a7a-6672-4699-b0a1-feab68adf1e5")
 			(effects
 				(font
 					(size 1 1)
@@ -205,12 +205,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "390002bc-0f68-4603-baf6-fa9155d6eebf")
+			(uuid "4c23583b-b048-4e89-a860-94313e6e3280")
 			(effects
 				(font
 					(size 1 1)
@@ -223,7 +223,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2421029a-7b44-4d17-8b24-42955a687ef9")
+			(uuid "0be31a58-2f86-4f53-b426-602f356560cc")
 			(effects
 				(font
 					(size 1 1)
@@ -236,7 +236,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fcd44148-61ea-4d40-bfca-4b92a3345694")
+			(uuid "6344fbab-c65c-4c38-b2ab-ba75d12d1a8b")
 			(effects
 				(font
 					(size 1 1)
@@ -258,7 +258,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "54e66466-1722-4344-a297-0b2a1a15cdb9")
+			(uuid "61bdba84-0629-4c7c-8530-094c5c563c63")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -269,14 +269,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "09d0380d-453b-46e9-9f31-92eb2939ba4e")
+			(uuid "9d0806d4-761b-4454-9195-3aca00ba3964")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a76d5277-dc48-46e9-a179-ad70089c4d4b")
+			(uuid "bdaed9e9-2b1c-499d-a012-8982d70e4062")
 			(effects
 				(font
 					(size 1 1)
@@ -292,7 +292,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "f57dab93-fb33-4455-8b4c-1201b75083a3")
+			(uuid "701a4614-d284-4cc8-a0ad-3a7fa76073c6")
 		)
 		(pad "2" smd rect
 			(at 1.1 0)
@@ -302,10 +302,10 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "9dcf44b4-9a03-437a-9c34-c04189393d4b")
+			(uuid "eb43471e-e84b-43d7-ac51-7e58dbf5e5c9")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "0f60c4fb-6ebf-4ca6-a2cb-75efe2b3ec00")
@@ -315,7 +315,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "63ed7197-1a08-47a3-aab6-de3f6933c6f5")
+			(uuid "15742cf3-4d23-495d-9771-e7b476451dbe")
 			(effects
 				(font
 					(size 1 1)
@@ -328,7 +328,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "628d53fb-9e00-4f4d-8bcf-0eb58e329ff6")
+			(uuid "c3496e6d-670d-4855-af51-a25b02424055")
 			(effects
 				(font
 					(size 1 1)
@@ -336,12 +336,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a6652f0b-9070-4c80-b857-0c94516e6ada")
+			(uuid "31f4e7ed-addf-45a1-abf2-1691c31dce05")
 			(effects
 				(font
 					(size 1 1)
@@ -354,7 +354,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e2bb4bfb-fb58-459b-84d4-4f9bf0535444")
+			(uuid "013ee75c-bf80-41e1-a683-7970948efd7a")
 			(effects
 				(font
 					(size 1 1)
@@ -367,7 +367,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "07bbc4e0-9544-47df-b460-d780a625ddcc")
+			(uuid "c72645b6-c86b-43ec-832f-c6ea14c70f84")
 			(effects
 				(font
 					(size 1 1)
@@ -389,7 +389,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "03bdbfec-49f4-4fa1-ad77-862ca0f7ec98")
+			(uuid "d4493732-af03-44d3-bce2-9a1403306785")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -400,14 +400,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "b8fb2c6a-9f80-4fc1-bf36-d3d2356cc905")
+			(uuid "b5337d45-70cf-48ed-ab3b-6eebbe8a05ae")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e3bd3a3e-e33f-44df-a22a-e076c6e32095")
+			(uuid "77ec0483-ee91-41e7-8639-6be5a4e30aa8")
 			(effects
 				(font
 					(size 1 1)
@@ -423,7 +423,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "bacee282-ce37-4304-a072-538e9545bffd")
+			(uuid "d1699e53-0dff-4134-ac5d-59bd6230ca6a")
 		)
 		(pad "2" smd rect
 			(at 1.1 0 180)
@@ -433,10 +433,10 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "66281fef-a1c5-4e81-b13f-a33e910d34d8")
+			(uuid "8e80a241-a506-4732-a72d-5ce5b53c8cc0")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "0ff74a0f-51e5-49bb-9d89-3d0e66dda285")
@@ -446,7 +446,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "1ec59b84-bc2a-4c3b-bf20-501dc642a181")
+			(uuid "bb0f7881-fc17-4213-97a4-8dbcdeef1136")
 			(effects
 				(font
 					(size 1 1)
@@ -459,7 +459,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0c5cd1e1-d0f4-441b-8dcb-a9104a7e6118")
+			(uuid "b7510b6d-fcb2-4621-a80c-402d91329641")
 			(effects
 				(font
 					(size 1 1)
@@ -467,12 +467,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6514be8c-58bc-4fca-8bd8-a2403b1a6c90")
+			(uuid "d8fb5fea-7625-403f-b64e-0f4526623a48")
 			(effects
 				(font
 					(size 1 1)
@@ -485,7 +485,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8875532a-a575-423b-a4b8-9f9ec86291f5")
+			(uuid "a9fbb1fd-13a9-439c-affd-96838f9f4005")
 			(effects
 				(font
 					(size 1 1)
@@ -498,7 +498,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "86f7ab78-75fd-45b5-b54e-35832dd012e5")
+			(uuid "60ba67e7-1ea4-472e-ad18-c374db7f2308")
 			(effects
 				(font
 					(size 1 1)
@@ -520,7 +520,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "f8e42e9f-e8b7-4b0d-9c6d-dfc53f65f402")
+			(uuid "53608e04-73a6-4871-b0f3-4ce706764481")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -531,14 +531,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "d8af05bb-53c1-41a7-9941-dc9bbc5019d4")
+			(uuid "54cbe641-e352-4026-9d20-234824784f7b")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "20a45c46-34ca-400e-a24c-61077039c16a")
+			(uuid "7b93df1a-7830-45ba-895a-e49b2036f777")
 			(effects
 				(font
 					(size 1 1)
@@ -554,7 +554,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "7eed1aca-da51-484a-94cb-4f8767f58845")
+			(uuid "8a98312d-f10c-403c-919e-70784aca06b0")
 		)
 		(pad "2" smd rect
 			(at 1.1 0 180)
@@ -564,10 +564,10 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "bdea364d-dea2-4d2a-bf9c-a3fd222aa04f")
+			(uuid "d265ed98-3d23-4eca-994c-1a0b365b8ca4")
 		)
 	)
-	(footprint "00-project-footprint-lib:PushButtonSMD_2.93x3.9"
+	(footprint "00-project-footprints:PushButtonSMD_2.93x3.9"
 		(layer "F.Cu")
 		(uuid "1f7eb989-ba8e-4e94-a654-7657de478b8a")
 		(at 129.5 104.7 -90)
@@ -575,7 +575,7 @@
 			(at 0.5 -2.5 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "8166c846-7462-4d08-b7f3-2728972862da")
+			(uuid "7220603a-d450-456b-b603-88d3f70b9fd3")
 			(effects
 				(font
 					(size 1 1)
@@ -587,7 +587,7 @@
 			(at 0.5 2.5 -90)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "f7c5481c-407d-44f9-98bf-5376fdbfe4ab")
+			(uuid "822f9a29-0df7-4d41-b480-b2fa8cc9daef")
 			(effects
 				(font
 					(size 1 1)
@@ -595,11 +595,11 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:PushButtonSMD_2.93x3.9"
+		(property "Footprint" "00-project-footprints:PushButtonSMD_2.93x3.9"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "22a79616-c6d3-4403-9378-f5ddb6a15a5a")
+			(uuid "ffd2c22b-a85f-4530-889c-305c4f25b93b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -611,7 +611,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "da2e2a56-41c9-454d-b98a-bf317b256e23")
+			(uuid "d3296f44-63ca-4955-b480-533a59b4bcd4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -623,7 +623,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "eac98786-1322-4251-a987-6833f4c1a35a")
+			(uuid "56cb75a8-353b-4bf4-b14e-e6f376c88408")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -643,7 +643,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "1e1054f7-a3c6-4209-afd7-9147c79e5b6e")
+			(uuid "48904941-8f1c-44fe-9e09-b983257585bc")
 		)
 		(fp_line
 			(start 2 1.65)
@@ -653,7 +653,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "1552a735-b057-4895-bbaa-5a7c737841c5")
+			(uuid "517b747e-bbe0-41a4-9acb-37908b5d3068")
 		)
 		(fp_line
 			(start 2 1.15)
@@ -663,7 +663,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "96d268ba-eea9-4f51-8b19-91d7e9637c49")
+			(uuid "f500279d-5b35-4759-83b6-853e34d9c404")
 		)
 		(fp_line
 			(start -2 -1.1)
@@ -673,7 +673,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "592adb23-ae88-42e3-b0f1-b14a685c4e78")
+			(uuid "307b40c8-521e-40fb-80e2-98f98d6e26df")
 		)
 		(fp_line
 			(start -2 -1.6)
@@ -683,7 +683,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "45e7ba9b-fa19-405d-ad43-0e039c33c662")
+			(uuid "acae68d5-ac71-4b83-9c2c-c13bcfa75753")
 		)
 		(fp_line
 			(start 2 -1.6)
@@ -693,7 +693,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "347e747d-f670-4308-b01a-dc09cc646b3b")
+			(uuid "dc78e34d-b0ee-4248-a172-8aba7cc26e5f")
 		)
 		(fp_circle
 			(center 0 0)
@@ -704,7 +704,7 @@
 			)
 			(fill none)
 			(layer "F.SilkS")
-			(uuid "51245dc2-4f41-44b6-b7b7-e55a585921fa")
+			(uuid "8eb2f5b0-f191-4847-a51a-8195e3f2e843")
 		)
 		(fp_rect
 			(start -3.5 -2)
@@ -715,13 +715,13 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "059c198a-c663-4007-b8c4-0af98f0261eb")
+			(uuid "8317216b-2f05-4977-b2ca-6d47291e1e7d")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0.5 4 -90)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "d31b2118-1168-41c7-b991-4208ec85b218")
+			(uuid "cc1fcd43-5648-4bdf-a3c2-56fa1eaba610")
 			(effects
 				(font
 					(size 1 1)
@@ -738,7 +738,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "26dfc944-acac-4bc4-8d9f-3809dc5d0660")
+			(uuid "a571e157-6c66-419d-a6cf-d78abc5cb1d1")
 		)
 		(pad "2" smd roundrect
 			(at 2 0 270)
@@ -749,7 +749,7 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "7deaa248-2877-4212-97c5-7d12a07e3151")
+			(uuid "3dc8a589-b27e-475d-9883-f0cb430729c7")
 		)
 	)
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
@@ -1504,7 +1504,7 @@
 			)
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "2ff62d4f-dec1-44db-962e-a29954f30272")
@@ -1514,7 +1514,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "3b257020-bf3c-4630-9fd9-d4daed9172c1")
+			(uuid "1b7f221c-4d65-448d-b1dd-3db47f08d18b")
 			(effects
 				(font
 					(size 1 1)
@@ -1527,7 +1527,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "32e768a4-65a9-4d6e-90e3-7293f31f4e18")
+			(uuid "f38c047e-aa2b-40a7-931c-09e2bcf3fa14")
 			(effects
 				(font
 					(size 1 1)
@@ -1535,12 +1535,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5abb605c-6c5b-4788-ada6-6a52eaf5fabc")
+			(uuid "264976f4-219b-4714-995a-a359b7a3412f")
 			(effects
 				(font
 					(size 1 1)
@@ -1553,7 +1553,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f1c3809e-1366-437e-89de-fbd79818024d")
+			(uuid "a9a668c8-0efa-43f6-b4e4-66defc2fbf1a")
 			(effects
 				(font
 					(size 1 1)
@@ -1566,7 +1566,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4a6e6271-05cf-4ed8-8ee8-73b12602d6ce")
+			(uuid "5031dabe-9647-4155-8a05-e1d56edd67a8")
 			(effects
 				(font
 					(size 1 1)
@@ -1588,7 +1588,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "f37b48d1-bab1-49f3-9b88-1a950ae92ab0")
+			(uuid "66066a06-9938-4285-b972-047559fa5b47")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -1599,14 +1599,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "aba31be8-5bdd-4f92-86b7-ea6afb275af8")
+			(uuid "f834262b-621c-4f9b-b38b-01d46dc0cb8f")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b0fc1716-00c6-4934-9988-a6ac4ac88190")
+			(uuid "90c9d242-2cb1-462d-8c4f-2d1ec9327694")
 			(effects
 				(font
 					(size 1 1)
@@ -1622,7 +1622,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "7bee69a6-2ada-4c55-9750-3cc77d00c7b0")
+			(uuid "c54d8ee5-35a7-43e3-b716-63ed4eb0958a")
 		)
 		(pad "2" smd rect
 			(at 1.1 0)
@@ -1632,10 +1632,10 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "5b36bd5e-21ae-4b1c-bd15-b94719f574ef")
+			(uuid "26d5059b-8f9c-4667-8626-15f583e00729")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "306cd84e-a699-4f4e-a706-f0407b1ed3c2")
@@ -1645,7 +1645,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "967f503f-bf16-4811-9fe6-ba274b0f1ce6")
+			(uuid "885eba5e-259d-4359-9c7e-3f06800a95ff")
 			(effects
 				(font
 					(size 1 1)
@@ -1658,7 +1658,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "78715283-0f3d-475c-91e6-a1148ed1d7a2")
+			(uuid "392f62b4-1f68-4935-8c6f-8ab8a0b4e6cf")
 			(effects
 				(font
 					(size 1 1)
@@ -1666,12 +1666,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ad8bfa4b-4763-49cf-a240-eaf40bcfe53e")
+			(uuid "89a1f779-6f8c-409c-b8e9-9f16ed4a6a2e")
 			(effects
 				(font
 					(size 1 1)
@@ -1684,7 +1684,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5d8f1f2a-dc88-4b4d-bf22-be9a622990fe")
+			(uuid "5b78dd3f-7fc3-47f8-9be7-276aec09e250")
 			(effects
 				(font
 					(size 1 1)
@@ -1697,7 +1697,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6099d903-a9ca-4417-ab06-12e1b839ee58")
+			(uuid "a34753ea-9fa4-4f84-9343-844caee89b11")
 			(effects
 				(font
 					(size 1 1)
@@ -1719,7 +1719,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "635fc462-5f48-48ba-a057-85f140337eaf")
+			(uuid "6e369956-2dec-44d8-abfc-9f9cd1bec135")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -1730,14 +1730,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "f0886126-f82a-42c5-8e93-7355fc11bf39")
+			(uuid "d1d8f45f-b861-4341-b889-6db9baed4f6c")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "607d4856-8ce5-4cde-a4b3-38ef465afe7b")
+			(uuid "874cab5e-c15f-4f3b-9f8b-39988509eeeb")
 			(effects
 				(font
 					(size 1 1)
@@ -1753,7 +1753,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "83ad755e-663a-4dff-816c-7757ad12218c")
+			(uuid "5bcaaeb4-0965-4524-b5cc-80806e193fda")
 		)
 		(pad "2" smd rect
 			(at 1.1 0 180)
@@ -1763,7 +1763,7 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "db5c9296-344f-40d8-a62c-1379c335faa4")
+			(uuid "526df962-a96a-4b3b-a243-ad1fc4a42a13")
 		)
 	)
 	(footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder"
@@ -2258,7 +2258,7 @@
 			)
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "4203f9f2-3f8b-4981-a56e-43a262a55398")
@@ -2268,7 +2268,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "ffd9bab2-ef66-4d50-bcdf-584eda5ee510")
+			(uuid "c12b9b6d-e7c8-4fa4-aef3-45a2fb68cb3e")
 			(effects
 				(font
 					(size 1 1)
@@ -2281,7 +2281,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f452348a-1e8b-42fe-8efd-c5622e3f596c")
+			(uuid "3840e27c-c01b-421e-8271-10d41bf0db25")
 			(effects
 				(font
 					(size 1 1)
@@ -2289,12 +2289,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2b68ae6d-521d-42e3-9cdc-16d4fe753fdd")
+			(uuid "057dcf1a-d1af-4f0a-94c0-655664caea9e")
 			(effects
 				(font
 					(size 1 1)
@@ -2307,7 +2307,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f5322eed-d1de-44f6-b989-39eacf098cd2")
+			(uuid "c4dce106-0852-4436-a7dd-f84983f08ae9")
 			(effects
 				(font
 					(size 1 1)
@@ -2320,7 +2320,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "94e172c5-df78-4028-8e7d-8b45af4e2380")
+			(uuid "7d5d577d-79bc-4fa2-b48e-5bb740d9aced")
 			(effects
 				(font
 					(size 1 1)
@@ -2342,7 +2342,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "e1964584-3410-492a-81b2-d5da3fdadb0d")
+			(uuid "e1657e49-4262-403c-8885-cc32856cf83b")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -2353,14 +2353,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "d2e1acaa-b561-4525-be87-45cbd7afba88")
+			(uuid "96b0a4f1-2200-4032-a9b9-e0aec1d04b9f")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fe52cd68-1ca8-4a39-8541-0dc31e76d8de")
+			(uuid "64fab21b-13e4-4b23-a318-8df2b7f7d4ba")
 			(effects
 				(font
 					(size 1 1)
@@ -2376,7 +2376,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "246a44dc-8c8d-42a2-b30c-3bd52c8f17cd")
+			(uuid "6edc2a3a-2823-4fb8-80a8-613d5b69a932")
 		)
 		(pad "2" smd rect
 			(at 1.1 0)
@@ -2386,10 +2386,10 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "90c6ecde-6381-4da5-8e87-cdf4c3ff4102")
+			(uuid "d5abe155-a6fb-4006-83d8-d0195796d4d9")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "4c82615a-6e8c-4c63-a822-37e80e4f5108")
@@ -2399,7 +2399,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "3775cf26-70e4-493c-a12a-a458d6f7aa54")
+			(uuid "a7b80c9a-7d8c-46b7-bada-b3cd75b7b3bc")
 			(effects
 				(font
 					(size 1 1)
@@ -2412,7 +2412,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "926bde6d-7e10-4033-8b04-38bdae94a7d5")
+			(uuid "0bb9b229-a7ac-47e1-969f-2d156bb3eabd")
 			(effects
 				(font
 					(size 1 1)
@@ -2420,12 +2420,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4d142303-2a6e-47a6-a142-c5b8405afadf")
+			(uuid "dc1bd111-2ac5-4e6f-a45b-e50c648f4709")
 			(effects
 				(font
 					(size 1 1)
@@ -2438,7 +2438,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ae301dff-ba0e-4a24-8366-03597b8dce12")
+			(uuid "5a995f0a-5fe2-49fa-bcd3-630942ffe6b1")
 			(effects
 				(font
 					(size 1 1)
@@ -2451,7 +2451,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "653ab6bd-89a8-4ce9-aaf6-817d1a936562")
+			(uuid "36e66ca1-83d8-4c87-870a-5aa89827b03f")
 			(effects
 				(font
 					(size 1 1)
@@ -2473,7 +2473,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "0c751540-133a-4caf-99c4-81f41aded075")
+			(uuid "aca8b7a3-98b8-494c-9537-2739028f3ec1")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -2484,14 +2484,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "eb0008a3-f085-4882-b65e-3886b32db40d")
+			(uuid "6f081de3-2034-424a-adcb-92e218715401")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6de55e87-e071-48b5-9126-7b69f0883ca0")
+			(uuid "148ffda8-362a-4214-ad4a-da7b450081ff")
 			(effects
 				(font
 					(size 1 1)
@@ -2507,7 +2507,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "48686bd5-0049-48d3-8572-bdef93d3257b")
+			(uuid "bcb7aab6-58a8-4245-b14b-6c1b0fe5339f")
 		)
 		(pad "2" smd rect
 			(at 1.1 0)
@@ -2517,7 +2517,7 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "162808bf-b278-47d4-9faf-d5a1c9db1e4a")
+			(uuid "4dd58f89-b389-4b3a-b4f2-432a121224d8")
 		)
 	)
 	(footprint "MountingHole:MountingHole_2.2mm_M2_Pad"
@@ -3013,7 +3013,7 @@
 			)
 		)
 	)
-	(footprint "00-project-footprint-lib:RP2040 Zero"
+	(footprint "00-project-footprints:RP2040 Zero"
 		(layer "F.Cu")
 		(uuid "6eb0d255-9542-4066-9b83-fb62a2647b17")
 		(at 124.3285 112.41 -90)
@@ -3021,7 +3021,7 @@
 			(at 10.16 -13.327 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "9647b66b-72ed-4f34-85df-4047d0cffa76")
+			(uuid "2bbc2d24-e2eb-45f5-8bc3-690ed20557b4")
 			(effects
 				(font
 					(size 1 1)
@@ -3033,7 +3033,7 @@
 			(at 10.16 -11.827 -90)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "45f8674b-cc72-4925-928c-17aba7211b1c")
+			(uuid "e0c1ce89-7786-431e-a734-de6bb6fbe6b6")
 			(effects
 				(font
 					(size 1 1)
@@ -3041,11 +3041,11 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:RP2040 Zero"
+		(property "Footprint" "00-project-footprints:RP2040 Zero"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6b9cbf26-fd53-4931-aa0a-a91378314523")
+			(uuid "e78fff74-a8e3-4912-9c4b-79ba493ecae8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3057,7 +3057,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0ac478a1-fddf-4a6f-af6f-054629435beb")
+			(uuid "7274b9d7-3fec-4617-afc2-25c9eb83f9f2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3069,7 +3069,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e2755564-d2bf-4f09-b3ce-36910fe92a8e")
+			(uuid "453105c0-17c3-4f10-9480-5fb93d0f7935")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3077,7 +3077,7 @@
 				)
 			)
 		)
-		(path "/46d3b499-bf16-4b99-8c46-ac5f1c0aafc8")
+		(path "/9e35c5ae-6761-4de9-aa1a-e9aa527561f6")
 		(sheetname "Root")
 		(sheetfile "Braille-Display-with-Inductor-Solenoids.kicad_sch")
 		(attr through_hole)
@@ -3089,7 +3089,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "1ed9ee2b-c01c-4791-8e23-096567910108")
+			(uuid "160719af-2b4b-4880-92ab-e08b9927cb58")
 		)
 		(fp_line
 			(start 16.51 -0.889)
@@ -3099,7 +3099,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "755cc9ae-bb45-40bc-a1a7-80017d5c0c5c")
+			(uuid "84ae3e9d-7021-4195-aee2-0471b1876962")
 		)
 		(fp_line
 			(start 0 -24.765)
@@ -3109,7 +3109,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "1181d08f-9c0e-4d72-b591-46c4ccc2c0cb")
+			(uuid "e4129d5b-63c1-482c-afd8-483c2b9a71d1")
 		)
 		(fp_line
 			(start 15.748 -24.765)
@@ -3119,7 +3119,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "ae059a89-6d66-4dd3-b151-0e9c2df2c5aa")
+			(uuid "5e065e84-d537-4572-a7b6-0af2b9421b0d")
 		)
 		(fp_line
 			(start 1.143 -0.889)
@@ -3129,7 +3129,7 @@
 				(type default)
 			)
 			(layer "F.Fab")
-			(uuid "6a8481d2-6d39-4105-ad14-9f16a4002ac1")
+			(uuid "388191ed-1a57-4293-bdda-8f074df4a666")
 		)
 		(fp_line
 			(start 19.304 -0.889)
@@ -3139,7 +3139,7 @@
 				(type default)
 			)
 			(layer "F.Fab")
-			(uuid "c1cb14ff-9286-4262-8885-e7550a1cb578")
+			(uuid "7746e6b0-f4f7-4445-81ad-5774c1577aeb")
 		)
 		(fp_line
 			(start 1.016 -24.765)
@@ -3149,7 +3149,7 @@
 				(type default)
 			)
 			(layer "F.Fab")
-			(uuid "b85e491e-7dc1-4caf-8955-c08a9496c5c0")
+			(uuid "743f458e-ec99-4360-a91e-e2dd04068239")
 		)
 		(fp_line
 			(start 14.732 -24.765)
@@ -3159,7 +3159,7 @@
 				(type default)
 			)
 			(layer "F.Fab")
-			(uuid "3a21e8a7-ad26-4a5e-b9da-fb4a7bdb10ee")
+			(uuid "42fba2d1-3518-44e8-b01d-9ec90df518ba")
 		)
 		(fp_line
 			(start 19.304 -24.765)
@@ -3169,7 +3169,7 @@
 				(type default)
 			)
 			(layer "F.Fab")
-			(uuid "4f32f0e8-8801-4640-a5a3-f026da0ccb96")
+			(uuid "e8117ca2-6144-41d5-bc6c-2494ad46e716")
 		)
 		(fp_rect
 			(start 5.715 -26.543)
@@ -3180,13 +3180,13 @@
 			)
 			(fill none)
 			(layer "F.Fab")
-			(uuid "82fd149d-ec22-40ca-ba27-86c465fcc73f")
+			(uuid "a0cfa5a3-0106-49d2-8e00-c2d266e38d76")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 10.16 -10.327 -90)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "14509998-8b5b-420e-9812-8a5a722ed0b4")
+			(uuid "ac16d274-fe87-4525-81b1-db4a5836bb0f")
 			(effects
 				(font
 					(size 1 1)
@@ -3201,7 +3201,7 @@
 			(net 27 "+5V")
 			(pinfunction "5V")
 			(pintype "power_in")
-			(uuid "7d95974a-cd0c-44e2-afc3-0b1123b1c2fe")
+			(uuid "c161f8f2-5619-4a03-a276-5361e0b0d310")
 		)
 		(pad "1" thru_hole circle
 			(at 2.54 -22.987 270)
@@ -3212,7 +3212,7 @@
 			(net 27 "+5V")
 			(pinfunction "5V")
 			(pintype "power_in")
-			(uuid "e560b081-714b-4cbd-9e37-a812bab46a9b")
+			(uuid "169d19a1-aa1c-4b39-9864-e53e843f33ef")
 		)
 		(pad "2" smd rect
 			(at 1.64 -20.447 270)
@@ -3221,7 +3221,7 @@
 			(net 1 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
-			(uuid "06d32264-a80d-4b21-8bab-96bed2fa433f")
+			(uuid "8b549d45-a14e-490c-acaf-4c43ae4fc4e5")
 		)
 		(pad "2" thru_hole circle
 			(at 2.54 -20.447 270)
@@ -3232,7 +3232,7 @@
 			(net 1 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
-			(uuid "2858602e-193e-401f-a457-700a66cbbd18")
+			(uuid "2313713a-4505-48d0-964d-b3f905017ea2")
 		)
 		(pad "3" smd rect
 			(at 1.64 -17.907 270)
@@ -3241,7 +3241,7 @@
 			(net 28 "+3V3")
 			(pinfunction "3V3")
 			(pintype "power_in")
-			(uuid "bbf26714-2816-4164-a01a-0c49aa38de74")
+			(uuid "23440aa6-cae5-4e3c-970c-b42505429324")
 		)
 		(pad "3" thru_hole circle
 			(at 2.54 -17.907 270)
@@ -3252,16 +3252,16 @@
 			(net 28 "+3V3")
 			(pinfunction "3V3")
 			(pintype "power_in")
-			(uuid "9a1c884c-b934-441b-8054-eeab9fb48f68")
+			(uuid "2bd88f2b-da2f-4108-86e6-a5cf7cfb1a4b")
 		)
 		(pad "4" smd rect
 			(at 1.64 -15.367 270)
 			(size 3.5 1.7)
 			(layers "F.Cu" "F.Mask")
-			(net 44 "unconnected-(U1-GP29-Pad4)")
+			(net 61 "unconnected-(U1-GP29-Pad4)_1")
 			(pinfunction "GP29")
 			(pintype "bidirectional+no_connect")
-			(uuid "5064645e-61f6-4782-accf-32f1443ac250")
+			(uuid "ea5fa960-3cb5-4f0d-96c6-ffcd4ac06720")
 		)
 		(pad "4" thru_hole circle
 			(at 2.54 -15.367 270)
@@ -3269,10 +3269,10 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 61 "unconnected-(U1-GP29-Pad4)_1")
+			(net 44 "unconnected-(U1-GP29-Pad4)")
 			(pinfunction "GP29")
 			(pintype "bidirectional+no_connect")
-			(uuid "f4660d7d-fb86-4c61-84ac-35d95e34eec8")
+			(uuid "8925d1d0-89fb-44be-8846-ea3592ea058f")
 		)
 		(pad "5" smd rect
 			(at 1.64 -12.827 270)
@@ -3281,7 +3281,7 @@
 			(net 92 "/SW_1")
 			(pinfunction "GP28")
 			(pintype "bidirectional")
-			(uuid "3f399645-eb5b-47b6-a0d1-0660113b982d")
+			(uuid "c33f1b42-db8e-42fa-a376-96254c11819f")
 		)
 		(pad "5" thru_hole circle
 			(at 2.54 -12.827 270)
@@ -3292,7 +3292,7 @@
 			(net 92 "/SW_1")
 			(pinfunction "GP28")
 			(pintype "bidirectional")
-			(uuid "01103dc5-1585-488d-a0b9-aae14c064aeb")
+			(uuid "2ebdc163-61eb-46e4-ab50-019511334809")
 		)
 		(pad "6" smd rect
 			(at 1.69 -10.287 270)
@@ -3301,7 +3301,7 @@
 			(net 93 "/SW_2")
 			(pinfunction "GP27")
 			(pintype "bidirectional")
-			(uuid "db0c5d70-ea0a-4725-be38-4005e23d6df7")
+			(uuid "69b2de19-6e06-4b26-9270-4be58d301ec0")
 		)
 		(pad "6" thru_hole circle
 			(at 2.54 -10.287 270)
@@ -3312,16 +3312,16 @@
 			(net 93 "/SW_2")
 			(pinfunction "GP27")
 			(pintype "bidirectional")
-			(uuid "5c67afe9-9e42-41dd-a383-0e4806d10fae")
+			(uuid "c0294610-9e0a-4fa4-9f1d-849177b11d83")
 		)
 		(pad "7" smd rect
 			(at 1.69 -7.747 270)
 			(size 3.5 1.7)
 			(layers "F.Cu" "F.Mask")
-			(net 53 "unconnected-(U1-GP26-Pad7)_1")
+			(net 35 "unconnected-(U1-GP26-Pad7)")
 			(pinfunction "GP26")
 			(pintype "bidirectional+no_connect")
-			(uuid "bc240f91-f8b8-4d98-8854-d3b5c1973d91")
+			(uuid "7270f245-b216-4a6c-9a90-45f8298c04fa")
 		)
 		(pad "7" thru_hole circle
 			(at 2.54 -7.747 270)
@@ -3329,19 +3329,19 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 35 "unconnected-(U1-GP26-Pad7)")
+			(net 53 "unconnected-(U1-GP26-Pad7)_1")
 			(pinfunction "GP26")
 			(pintype "bidirectional+no_connect")
-			(uuid "1141c044-4f9a-4244-a606-871f5ed1e381")
+			(uuid "d7c77970-1127-4040-9ca9-e83a4f2ba888")
 		)
 		(pad "8" smd rect
 			(at 1.69 -5.207 270)
 			(size 3.5 1.7)
 			(layers "F.Cu" "F.Mask")
-			(net 48 "unconnected-(U1-GP15-Pad8)_1")
+			(net 39 "unconnected-(U1-GP15-Pad8)")
 			(pinfunction "GP15")
 			(pintype "bidirectional+no_connect")
-			(uuid "6ff01591-ff4d-4086-a864-f2eefd982c99")
+			(uuid "1ff3aaf0-239c-4296-ac49-1738dda9d983")
 		)
 		(pad "8" thru_hole circle
 			(at 2.54 -5.207 270)
@@ -3349,19 +3349,19 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 39 "unconnected-(U1-GP15-Pad8)")
+			(net 48 "unconnected-(U1-GP15-Pad8)_1")
 			(pinfunction "GP15")
 			(pintype "bidirectional+no_connect")
-			(uuid "2da52285-4a65-4a8c-9eee-60da89bb3e3f")
+			(uuid "2b83800f-8839-4f36-83b5-263140b99587")
 		)
 		(pad "9" smd rect
 			(at 1.69 -2.667 270)
 			(size 3.5 1.7)
 			(layers "F.Cu" "F.Mask")
-			(net 41 "unconnected-(U1-GP14-Pad9)")
+			(net 56 "unconnected-(U1-GP14-Pad9)_1")
 			(pinfunction "GP14")
 			(pintype "bidirectional+no_connect")
-			(uuid "430271b3-eac5-4e52-9fe1-5bdf0d719204")
+			(uuid "c5986f11-9def-4ee3-acac-e82fbd502490")
 		)
 		(pad "9" thru_hole circle
 			(at 2.54 -2.667 270)
@@ -3369,10 +3369,10 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 56 "unconnected-(U1-GP14-Pad9)_1")
+			(net 41 "unconnected-(U1-GP14-Pad9)")
 			(pinfunction "GP14")
 			(pintype "bidirectional+no_connect")
-			(uuid "cdc14d38-ee1c-429c-855a-b7d2259e1f2b")
+			(uuid "47775f10-ca99-4fc2-ad1f-08a4ef3ccb10")
 		)
 		(pad "10" thru_hole circle
 			(at 17.78 -22.987 270)
@@ -3383,7 +3383,7 @@
 			(net 47 "unconnected-(U1-GP0-Pad10)_1")
 			(pinfunction "GP0")
 			(pintype "bidirectional+no_connect")
-			(uuid "6d20eb3b-bcb5-4ecf-b010-befafe362448")
+			(uuid "865c9453-8835-4519-b34d-ebec93c4420f")
 		)
 		(pad "10" smd rect
 			(at 18.68 -22.987 270)
@@ -3392,7 +3392,7 @@
 			(net 43 "unconnected-(U1-GP0-Pad10)")
 			(pinfunction "GP0")
 			(pintype "bidirectional+no_connect")
-			(uuid "4db355ac-e55b-4ced-aa6d-c6681fd769c7")
+			(uuid "5743094d-67e5-4b3e-a021-90b31e4bb60a")
 		)
 		(pad "11" thru_hole circle
 			(at 17.78 -20.447 270)
@@ -3403,7 +3403,7 @@
 			(net 38 "unconnected-(U1-GP1-Pad11)")
 			(pinfunction "GP1")
 			(pintype "bidirectional+no_connect")
-			(uuid "2921a23d-3675-4eb9-ba0d-c498c6aded51")
+			(uuid "2fb925a7-921a-4d06-b8e5-a6acde47dd78")
 		)
 		(pad "11" smd rect
 			(at 18.68 -20.447 270)
@@ -3412,7 +3412,7 @@
 			(net 62 "unconnected-(U1-GP1-Pad11)_1")
 			(pinfunction "GP1")
 			(pintype "bidirectional+no_connect")
-			(uuid "f55ce8ad-dc76-424d-90d1-e7c504a5495e")
+			(uuid "8cd88b15-aabf-4133-8a70-fe878efebac0")
 		)
 		(pad "12" thru_hole circle
 			(at 17.78 -17.907 270)
@@ -3423,7 +3423,7 @@
 			(net 50 "/SHIFT_SER_IN")
 			(pinfunction "GP2")
 			(pintype "bidirectional")
-			(uuid "8717a154-1f65-4a57-87dc-14f0b50d5e5d")
+			(uuid "776bd30e-4c9c-4cd3-a8df-ad5caacc6cf9")
 		)
 		(pad "12" smd rect
 			(at 18.68 -17.907 270)
@@ -3432,7 +3432,7 @@
 			(net 50 "/SHIFT_SER_IN")
 			(pinfunction "GP2")
 			(pintype "bidirectional")
-			(uuid "e9e708a0-c426-4c6e-830c-df7b7c1bc0f1")
+			(uuid "f70a94ab-57e5-4df7-b5c1-126773c97b9a")
 		)
 		(pad "13" thru_hole circle
 			(at 17.78 -15.367 270)
@@ -3443,7 +3443,7 @@
 			(net 42 "/SHIFT_SRCK")
 			(pinfunction "GP3")
 			(pintype "bidirectional")
-			(uuid "8e8451cd-fd78-4a61-93b8-6ea0dddd5b27")
+			(uuid "8f09f828-b1d8-4fb4-a848-4607a4112925")
 		)
 		(pad "13" smd rect
 			(at 18.68 -15.367 270)
@@ -3452,7 +3452,7 @@
 			(net 42 "/SHIFT_SRCK")
 			(pinfunction "GP3")
 			(pintype "bidirectional")
-			(uuid "45319fce-7d84-4d08-bd58-d015b419b4c6")
+			(uuid "3d9b26cc-775c-4207-85df-9cc789869f3f")
 		)
 		(pad "14" thru_hole circle
 			(at 17.78 -12.827 270)
@@ -3463,7 +3463,7 @@
 			(net 52 "/SHIFT_RCLK")
 			(pinfunction "GP4")
 			(pintype "bidirectional")
-			(uuid "c77c2f10-b83c-40ed-b05d-3e054333b05f")
+			(uuid "2a9424a0-7c2a-41f8-a370-14161021d210")
 		)
 		(pad "14" smd rect
 			(at 18.68 -12.827 270)
@@ -3472,7 +3472,7 @@
 			(net 52 "/SHIFT_RCLK")
 			(pinfunction "GP4")
 			(pintype "bidirectional")
-			(uuid "a89b7436-c18f-446b-8f1e-4bffd6fa9bb5")
+			(uuid "d181db9a-9fb6-4bae-872f-f945601458cc")
 		)
 		(pad "15" thru_hole circle
 			(at 17.78 -10.287 270)
@@ -3483,7 +3483,7 @@
 			(net 37 "/SHIFT_G")
 			(pinfunction "GP5")
 			(pintype "bidirectional")
-			(uuid "2497c18a-0b51-4436-9702-0a0ca9770230")
+			(uuid "e6cb92bc-408c-4c66-a6e4-f2107b7bd43c")
 		)
 		(pad "15" smd rect
 			(at 18.68 -10.287 270)
@@ -3492,7 +3492,7 @@
 			(net 37 "/SHIFT_G")
 			(pinfunction "GP5")
 			(pintype "bidirectional")
-			(uuid "f3524551-13ca-45a5-9d6f-81b6dc673f34")
+			(uuid "3eddfbce-248d-43ef-88f1-d2523c2eb37e")
 		)
 		(pad "16" thru_hole circle
 			(at 17.78 -7.747 270)
@@ -3500,19 +3500,19 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 46 "unconnected-(U1-GP6-Pad16)")
+			(net 60 "unconnected-(U1-GP6-Pad16)_1")
 			(pinfunction "GP6")
 			(pintype "bidirectional+no_connect")
-			(uuid "6b60d6cf-eb06-4659-81be-062d738f6067")
+			(uuid "d07e234e-c8b6-4274-b480-5c14803cf464")
 		)
 		(pad "16" smd rect
 			(at 18.68 -7.747 270)
 			(size 3.5 1.7)
 			(layers "F.Cu" "F.Mask")
-			(net 60 "unconnected-(U1-GP6-Pad16)_1")
+			(net 46 "unconnected-(U1-GP6-Pad16)")
 			(pinfunction "GP6")
 			(pintype "bidirectional+no_connect")
-			(uuid "ee96df3a-82f0-4aca-b578-000b82dcf0fe")
+			(uuid "1a377470-3426-455c-a143-15055172dd96")
 		)
 		(pad "17" thru_hole circle
 			(at 17.78 -5.207 270)
@@ -3520,19 +3520,19 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 58 "unconnected-(U1-GP7-Pad17)_1")
+			(net 57 "unconnected-(U1-GP7-Pad17)")
 			(pinfunction "GP7")
 			(pintype "bidirectional+no_connect")
-			(uuid "e917a1c7-49d3-4003-a3ed-85cbf0374947")
+			(uuid "582abcb8-62db-4bac-88a7-8d121d313036")
 		)
 		(pad "17" smd rect
 			(at 18.68 -5.207 270)
 			(size 3.5 1.7)
 			(layers "F.Cu" "F.Mask")
-			(net 57 "unconnected-(U1-GP7-Pad17)")
+			(net 58 "unconnected-(U1-GP7-Pad17)_1")
 			(pinfunction "GP7")
 			(pintype "bidirectional+no_connect")
-			(uuid "d49a0d29-3233-4e71-a19f-deaaf512de97")
+			(uuid "6012d1d2-d377-4dec-b3cb-46844acb78fb")
 		)
 		(pad "18" thru_hole circle
 			(at 17.78 -2.667 270)
@@ -3540,19 +3540,19 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 63 "unconnected-(U1-GP8-Pad18)_1")
+			(net 54 "unconnected-(U1-GP8-Pad18)")
 			(pinfunction "GP8")
 			(pintype "bidirectional+no_connect")
-			(uuid "f62b3f37-cbb5-4a90-924c-12b022136618")
+			(uuid "9e4edf60-afa4-41a1-b035-420033524541")
 		)
 		(pad "18" smd rect
 			(at 18.68 -2.667 270)
 			(size 3.5 1.7)
 			(layers "F.Cu" "F.Mask")
-			(net 54 "unconnected-(U1-GP8-Pad18)")
+			(net 63 "unconnected-(U1-GP8-Pad18)_1")
 			(pinfunction "GP8")
 			(pintype "bidirectional+no_connect")
-			(uuid "c34b62e3-501d-40a3-a62f-46b96cb40103")
+			(uuid "c00703a4-bd9f-46d7-ba4d-17267c9d7e5d")
 		)
 		(pad "19" thru_hole circle
 			(at 5.08 -2.667 270)
@@ -3560,19 +3560,19 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 34 "unconnected-(U1-GP13-Pad19)")
+			(net 40 "unconnected-(U1-GP13-Pad19)_1")
 			(pinfunction "GP13")
 			(pintype "bidirectional+no_connect")
-			(uuid "05b79582-f80b-4f39-b7d2-3016655b6129")
+			(uuid "f0892309-e5ed-40d6-8cb6-23aacaf5ad87")
 		)
 		(pad "19" smd rect
 			(at 5.08 -1.767)
 			(size 3.5 1.7)
 			(layers "F.Cu" "F.Mask")
-			(net 40 "unconnected-(U1-GP13-Pad19)_1")
+			(net 34 "unconnected-(U1-GP13-Pad19)")
 			(pinfunction "GP13")
 			(pintype "bidirectional+no_connect")
-			(uuid "2dc6b969-6ea6-48de-ac71-3b1be38d124e")
+			(uuid "32e35004-abd2-4ea2-b37d-a840dfab3909")
 		)
 		(pad "20" thru_hole circle
 			(at 7.62 -2.667 270)
@@ -3583,7 +3583,7 @@
 			(net 51 "unconnected-(U1-GP12-Pad20)_1")
 			(pinfunction "GP12")
 			(pintype "bidirectional+no_connect")
-			(uuid "8dfe62a8-22d7-4c78-b79d-624d8a6132ad")
+			(uuid "c0de99c9-dcf3-49de-a469-423abf362aab")
 		)
 		(pad "20" smd rect
 			(at 7.62 -1.817)
@@ -3592,7 +3592,7 @@
 			(net 45 "unconnected-(U1-GP12-Pad20)")
 			(pinfunction "GP12")
 			(pintype "bidirectional+no_connect")
-			(uuid "5e13c383-76ed-4187-a302-d08ab20781f4")
+			(uuid "416d6d2f-7940-4f08-bace-315b49181f15")
 		)
 		(pad "21" thru_hole circle
 			(at 10.16 -2.667 270)
@@ -3600,19 +3600,19 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 49 "unconnected-(U1-GP11-Pad21)_1")
+			(net 36 "unconnected-(U1-GP11-Pad21)")
 			(pinfunction "GP11")
 			(pintype "bidirectional+no_connect")
-			(uuid "7e79374f-109a-4ca7-be96-0eed507983e6")
+			(uuid "6dc8ba78-a3f6-4217-bcb1-4fca309958cc")
 		)
 		(pad "21" smd rect
 			(at 10.16 -1.817)
 			(size 3.5 1.7)
 			(layers "F.Cu" "F.Mask")
-			(net 36 "unconnected-(U1-GP11-Pad21)")
+			(net 49 "unconnected-(U1-GP11-Pad21)_1")
 			(pinfunction "GP11")
 			(pintype "bidirectional+no_connect")
-			(uuid "21868b58-9a0d-4a74-a916-237aa191f4a5")
+			(uuid "78880847-8208-44e2-8839-01f6c4c90c2f")
 		)
 		(pad "22" thru_hole circle
 			(at 12.7 -2.667 270)
@@ -3623,7 +3623,7 @@
 			(net 33 "unconnected-(U1-GP10-Pad22)")
 			(pinfunction "GP10")
 			(pintype "bidirectional+no_connect")
-			(uuid "03337097-b765-46ac-9055-4535dc475d0d")
+			(uuid "3d33d86d-6e31-412a-860f-bd2e6a1b46a4")
 		)
 		(pad "22" smd rect
 			(at 12.7 -1.817)
@@ -3632,7 +3632,7 @@
 			(net 55 "unconnected-(U1-GP10-Pad22)_1")
 			(pinfunction "GP10")
 			(pintype "bidirectional+no_connect")
-			(uuid "cce11031-e3aa-493d-b4ec-66b221067073")
+			(uuid "ffd02dd9-5d00-416f-beb7-c94166ae7bb5")
 		)
 		(pad "23" thru_hole circle
 			(at 15.24 -2.667 270)
@@ -3643,7 +3643,7 @@
 			(net 64 "unconnected-(U1-GP9-Pad23)_1")
 			(pinfunction "GP9")
 			(pintype "bidirectional+no_connect")
-			(uuid "fa30f210-8720-40b9-8209-02d2fcaa2e58")
+			(uuid "8ea3a91d-c518-445f-ab5d-17282bdfeb75")
 		)
 		(pad "23" smd rect
 			(at 15.24 -1.817)
@@ -3652,10 +3652,10 @@
 			(net 59 "unconnected-(U1-GP9-Pad23)")
 			(pinfunction "GP9")
 			(pintype "bidirectional+no_connect")
-			(uuid "eaa3c61f-6c54-4a7a-bc69-be5bc6d960ac")
+			(uuid "14d2ef30-8aa4-4bb1-ad22-a9e2f1e1e48d")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "75a67dd7-8aa8-4100-a8fe-999c60896f54")
@@ -3665,7 +3665,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "d0f0973a-4529-4aff-9784-ceae03a5187b")
+			(uuid "c2dd4f07-2d65-49d9-addf-dfc81ac1a6a2")
 			(effects
 				(font
 					(size 1 1)
@@ -3678,7 +3678,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0352c386-2cde-41ec-9aa6-6e842165acba")
+			(uuid "cc3dd1c3-61f5-4290-b9a6-91d0c36cb79d")
 			(effects
 				(font
 					(size 1 1)
@@ -3686,12 +3686,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "dc528d02-c0ce-469c-a3f3-92e526ee131a")
+			(uuid "090a9152-fbba-48bc-9f28-ed13949a9bd5")
 			(effects
 				(font
 					(size 1 1)
@@ -3704,7 +3704,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "88dc0442-58d5-4887-b4e7-3478b331f68e")
+			(uuid "f4b01d78-7c3c-473e-92c5-ced5919ff419")
 			(effects
 				(font
 					(size 1 1)
@@ -3717,7 +3717,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "642c0228-5567-41a7-9864-43ed326e8972")
+			(uuid "65bb1762-3529-405c-ace5-86bf132a3945")
 			(effects
 				(font
 					(size 1 1)
@@ -3739,7 +3739,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "1e6c8563-b40d-4175-8547-c963e69bee59")
+			(uuid "10f1b7c9-8cf7-4f7c-8e48-f0551bfd88cb")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -3750,14 +3750,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "2ebead99-19b8-4125-83f6-902838273720")
+			(uuid "5437fd6b-b803-4077-8e46-74a7ffc2e34a")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2675f324-f68b-4d7d-90a1-44111f806a12")
+			(uuid "4a828aeb-b7c9-4747-b040-84b34bc62902")
 			(effects
 				(font
 					(size 1 1)
@@ -3773,7 +3773,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "a4f11253-ce64-49f1-b28f-7b09b9d628b6")
+			(uuid "5ff6a0ed-1d36-449b-928f-20cecec6f38c")
 		)
 		(pad "2" smd rect
 			(at 1.1 0)
@@ -3783,10 +3783,10 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "2186a8ab-679c-4856-b9d0-1d283123a88d")
+			(uuid "ca96c55b-478a-4f30-a57e-612bfc2f18cc")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "7fa6c6f0-2f31-4aa5-bb89-becf151d62eb")
@@ -3796,7 +3796,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "67c4068f-1bd9-407c-93a7-11ed9127dda6")
+			(uuid "2f50ee69-1717-42aa-8b2f-f25c26c51fdb")
 			(effects
 				(font
 					(size 1 1)
@@ -3809,7 +3809,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "14b54dd2-df23-4871-8df2-07697433cf1f")
+			(uuid "5f57fa37-31bd-4921-8dcb-5ef29a63cef5")
 			(effects
 				(font
 					(size 1 1)
@@ -3817,12 +3817,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "81540bc8-1e5d-429c-9fda-38a0170aedd9")
+			(uuid "4842987f-230a-4fc6-be52-ad3a4d5fb572")
 			(effects
 				(font
 					(size 1 1)
@@ -3835,7 +3835,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6c1bf228-de43-4ea1-b18a-b8e335fdabae")
+			(uuid "5e6df79d-150b-4e3b-8f5b-1bbeaf0e7a01")
 			(effects
 				(font
 					(size 1 1)
@@ -3848,7 +3848,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "dbc92ef4-9690-4f9b-8c26-5c0f0b07ef9e")
+			(uuid "eaea1655-d6ab-4168-995f-85f75e22c9fe")
 			(effects
 				(font
 					(size 1 1)
@@ -3870,7 +3870,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "2cd41515-2f12-42b7-8fcc-d61afc83ece5")
+			(uuid "28e58fee-9e5d-4ab2-8e7d-87a33e0a6131")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -3881,14 +3881,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "7ea845c3-68e2-4ffd-8b70-793910a880c8")
+			(uuid "b9adf9b9-b2da-4fc9-bddf-2f9e491d0269")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "864377fa-3e87-48e1-9000-4d4a22688739")
+			(uuid "0ff1786b-8d23-4239-be4f-4ebbe758f1ca")
 			(effects
 				(font
 					(size 1 1)
@@ -3904,7 +3904,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "98d9b407-0ae0-4069-9649-cea255caae2d")
+			(uuid "f7910819-fbdb-44a6-84ad-1beb02597f91")
 		)
 		(pad "2" smd rect
 			(at 1.1 0)
@@ -3914,7 +3914,7 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "6051f006-025f-4e85-8e33-ce0f23e1d6ce")
+			(uuid "d7ac6851-1a66-410c-998d-1ff68b6cde84")
 		)
 	)
 	(footprint "TerminalBlock:TerminalBlock_bornier-2_P5.08mm"
@@ -4648,7 +4648,7 @@
 			)
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "936e3551-8c5a-4d73-bd8b-fcdc4c762b4b")
@@ -4658,7 +4658,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "6ee96ca0-b31d-4926-9263-7ce4f78e05e3")
+			(uuid "7df45fd5-494b-4804-a4ef-7ac9555fa307")
 			(effects
 				(font
 					(size 1 1)
@@ -4671,7 +4671,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e58101e5-46ca-46a8-b0e5-73a5412b7185")
+			(uuid "465936d0-4479-43cf-80a6-24373b94a7e2")
 			(effects
 				(font
 					(size 1 1)
@@ -4679,12 +4679,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "cac6d9ba-83f2-4674-9ac6-a81083b98337")
+			(uuid "a167920e-a5db-4732-b768-1e937c660d50")
 			(effects
 				(font
 					(size 1 1)
@@ -4697,7 +4697,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3008d6ab-de12-4823-93b8-fb5ab1f9c024")
+			(uuid "3d66e8c0-3484-4f9d-9ec3-5864365d7276")
 			(effects
 				(font
 					(size 1 1)
@@ -4710,7 +4710,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "264a4ce2-f46a-43b4-9196-20f40157159e")
+			(uuid "008e7e69-7ca1-4443-82ed-84b575d71fae")
 			(effects
 				(font
 					(size 1 1)
@@ -4732,7 +4732,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "061fd568-52ac-4e73-993d-c053ae96ada5")
+			(uuid "0664ee64-fb26-4d20-afbd-8a9189198fb1")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -4743,14 +4743,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "23b82a8c-6ef0-4e5f-a1d5-60f89d819c2b")
+			(uuid "fe1e97c0-868a-4cbd-95a5-c6624bba58c8")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "14590053-bbd6-456b-9075-27096e6782c4")
+			(uuid "726cd6fb-8e60-4836-a698-984535c91317")
 			(effects
 				(font
 					(size 1 1)
@@ -4766,7 +4766,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "b22488e8-474a-4218-b758-21337387e647")
+			(uuid "024cb318-3389-4517-a179-f4b8e1ebcfbf")
 		)
 		(pad "2" smd rect
 			(at 1.1 0)
@@ -4776,10 +4776,10 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "640204b4-20f8-4cdb-a576-34a598e0b495")
+			(uuid "bb3aa0d5-e840-43f3-ae94-517d29fb2031")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "986bb337-57c2-4786-80bc-aeede981fb23")
@@ -4789,7 +4789,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "bea7d987-1e01-4b88-a4c3-6d514d03e08e")
+			(uuid "4efc179d-1f08-410f-aa55-cd3c64301ffc")
 			(effects
 				(font
 					(size 1 1)
@@ -4802,7 +4802,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "522229c4-2ae3-43df-bad1-b5696542a2d2")
+			(uuid "7e996e72-dfeb-4d75-9710-9ec09df97f4d")
 			(effects
 				(font
 					(size 1 1)
@@ -4810,12 +4810,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f260f271-e0e6-4772-86e2-b7074f085a9b")
+			(uuid "b643f1f8-5278-4404-aa6c-0c354bff4e65")
 			(effects
 				(font
 					(size 1 1)
@@ -4828,7 +4828,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "55630ca6-d94b-4c89-9fdd-8408b65f9c4a")
+			(uuid "4fd86af0-5b4c-4d5a-bc1c-81dc8c411c7c")
 			(effects
 				(font
 					(size 1 1)
@@ -4841,7 +4841,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "55d47f19-9b04-4184-94c8-14595d3a0d6d")
+			(uuid "7b7509e2-a146-496a-91ec-058760cc8257")
 			(effects
 				(font
 					(size 1 1)
@@ -4863,7 +4863,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "a50ac1ca-5d37-49f9-8cb5-4a3b89a33540")
+			(uuid "cb785846-947b-4bb2-842f-aee7b7bb62f4")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -4874,14 +4874,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "d188fff2-3e1e-4062-a09b-3ecc2cfcc0f8")
+			(uuid "4893e48f-a141-4c51-9940-1303a21f9627")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f3fe4af1-23fb-47eb-a8df-09c9707e2606")
+			(uuid "eba444c7-dc71-4d66-b8fc-7a66d3f0cd4b")
 			(effects
 				(font
 					(size 1 1)
@@ -4897,7 +4897,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "72f87171-6563-4b7e-8162-88396c702b6c")
+			(uuid "49f35b32-9d4c-4cd9-a376-5efbdf46eff7")
 		)
 		(pad "2" smd rect
 			(at 1.1 0)
@@ -4907,7 +4907,7 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "fced6cbd-76df-4553-9c5c-4fe02016906c")
+			(uuid "89aec5bc-3264-47c8-95e5-85244cb4492c")
 		)
 	)
 	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad"
@@ -5028,7 +5028,7 @@
 			(uuid "9657ae8e-ca30-43eb-948c-5e59a25ff57e")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "9ba4af07-d30d-4ef9-bfda-0addc7f9d4c4")
@@ -5038,7 +5038,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "32124206-60df-4863-b806-ef06cef702ff")
+			(uuid "278a1115-dec1-4010-accf-1e22df6efcd7")
 			(effects
 				(font
 					(size 1 1)
@@ -5051,7 +5051,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ddfb5adf-311a-4708-9be3-98570b60994e")
+			(uuid "2acc0ff8-dcac-401f-9b87-2848bee56dd8")
 			(effects
 				(font
 					(size 1 1)
@@ -5059,12 +5059,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "417cb8c6-b3c9-4dfe-b84a-2a7d85d38d4e")
+			(uuid "ed009b68-8fc7-453b-8182-4512ed3705f9")
 			(effects
 				(font
 					(size 1 1)
@@ -5077,7 +5077,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e9219c8c-cff7-4c00-9cba-f46aaf314f57")
+			(uuid "612303e5-bd4d-4ae5-9dd6-9d6ab6c0316b")
 			(effects
 				(font
 					(size 1 1)
@@ -5090,7 +5090,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "cfa5f4e8-4131-4318-b70c-c64be323bab3")
+			(uuid "ec5275a8-3017-4ed6-9225-fc562cc79eb1")
 			(effects
 				(font
 					(size 1 1)
@@ -5112,7 +5112,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "501acd23-ca7f-410f-a31e-1cb59747a57b")
+			(uuid "fbabd5a4-bb88-498a-8546-c8e45f2d989e")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -5123,14 +5123,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "245e1659-0f2b-4a0d-9828-f15f36facce1")
+			(uuid "36aea2b6-fc0e-4ffc-be61-367acf437d92")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b4fcc406-1dc4-4314-8312-7703f2553982")
+			(uuid "de1e5dcb-ccbd-47d1-ae5f-407ee0d67ebc")
 			(effects
 				(font
 					(size 1 1)
@@ -5146,7 +5146,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "b5b9adca-7404-4701-b2e0-2e16b26e5133")
+			(uuid "79ffa38e-2c6f-4050-8795-8b202ccf848a")
 		)
 		(pad "2" smd rect
 			(at 1.1 0 180)
@@ -5156,7 +5156,7 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "17f06eda-2264-4205-889e-98f0c7de880c")
+			(uuid "98b16228-5a34-46fc-b45c-26d872d749b3")
 		)
 	)
 	(footprint "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm"
@@ -5964,7 +5964,7 @@
 			)
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "bb2fcc26-a391-4e82-b4c8-6789fe0d6bbe")
@@ -5974,7 +5974,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "4a93b89e-ef53-46b1-9f86-86dc3148be40")
+			(uuid "0130a08e-7c4d-47d1-b769-0581f4afe8ba")
 			(effects
 				(font
 					(size 1 1)
@@ -5987,7 +5987,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1d8f60a0-2db7-4194-bee4-afd8706f9d3a")
+			(uuid "b097e98f-9162-4226-b2c4-245e0f4c6357")
 			(effects
 				(font
 					(size 1 1)
@@ -5995,12 +5995,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "c9200330-18f1-470e-bd4b-bc42c02b060f")
+			(uuid "cb82c570-2461-4263-acb5-16e2bd8c3f7e")
 			(effects
 				(font
 					(size 1 1)
@@ -6013,7 +6013,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "469a9c9b-d090-4d9b-b115-fe44b53b9ba7")
+			(uuid "466d5fc2-3378-4a7b-a69c-9001cb971058")
 			(effects
 				(font
 					(size 1 1)
@@ -6026,7 +6026,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8a81b4f6-3dcf-47bb-9694-3bf1c0b923a5")
+			(uuid "005ef72c-2bbf-44ff-ae21-42565fbca84a")
 			(effects
 				(font
 					(size 1 1)
@@ -6048,7 +6048,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "43fdc20d-9f4a-43db-a78e-9e09e5606e08")
+			(uuid "02504cd5-3931-49ba-9c29-26eebff458a1")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -6059,14 +6059,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "ce9fb9aa-8063-44e0-81a5-2472556793bb")
+			(uuid "a9d51153-201a-4def-98d7-3f60c1cb562c")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "03c3c2c2-f8a9-43f6-96cb-e460c8a4f952")
+			(uuid "ffc38f4c-d367-45ca-90d9-f375a1cbd59d")
 			(effects
 				(font
 					(size 1 1)
@@ -6082,7 +6082,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "88ff4a3c-fc76-43ff-a9b3-6c8581d38257")
+			(uuid "a6b789ca-3b3c-4556-ade8-ee834e1760f1")
 		)
 		(pad "2" smd rect
 			(at 1.1 0 180)
@@ -6092,10 +6092,10 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "3ab8b70d-811f-45a7-85bd-13fa79d0d6b8")
+			(uuid "cbb9aeb2-895a-43e0-8314-84b18c7b1ef4")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "c0bc71e9-fd70-4769-b14e-e7652fd9f2d0")
@@ -6105,7 +6105,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "aa6a0a45-6402-4e4d-90d1-c30ac2f21a19")
+			(uuid "b4fb9e9b-8894-4c9d-ac88-a67a117b7afb")
 			(effects
 				(font
 					(size 1 1)
@@ -6118,7 +6118,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "eedc8161-3a4d-490c-967b-e90df54cb9ea")
+			(uuid "4327e681-e65b-4cef-9ab6-70d0fc1afedb")
 			(effects
 				(font
 					(size 1 1)
@@ -6126,12 +6126,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "20e58e28-23b8-4d95-be4b-29ad6336218d")
+			(uuid "f8ce823a-1319-4e1b-95b4-1e9d375b46ac")
 			(effects
 				(font
 					(size 1 1)
@@ -6144,7 +6144,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "068a2c9a-c20a-4374-b7fd-1190aef6a371")
+			(uuid "05a3c5a2-b5bf-4421-80df-f10ac9eb58de")
 			(effects
 				(font
 					(size 1 1)
@@ -6157,7 +6157,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d279fe1e-cdd3-44c3-ab8d-89006f795262")
+			(uuid "bb8c64a9-f1cd-4772-86f0-0ed1c6a8c14d")
 			(effects
 				(font
 					(size 1 1)
@@ -6179,7 +6179,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "a37017f7-6faa-4f1c-bffb-a8fce152c7db")
+			(uuid "f316c3cd-69ac-4342-bd07-c13fa0fe5647")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -6190,14 +6190,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "1c69b1d5-954e-4cf8-aa27-388e45f5735f")
+			(uuid "eca75d7c-e0a8-4faa-8ebc-625f91f21df1")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ba2e4b17-7ac6-4ef0-90e1-f743283b1a59")
+			(uuid "32dffd53-8e24-4d75-a506-3ea4122dc114")
 			(effects
 				(font
 					(size 1 1)
@@ -6213,7 +6213,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "be4927e6-3e02-4b39-a91c-6f84a89be1bf")
+			(uuid "f77c6022-951f-4e01-84ec-1efd7eec82e3")
 		)
 		(pad "2" smd rect
 			(at 1.1 0 180)
@@ -6223,7 +6223,7 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "3efb996d-10c7-45ba-b0e8-9a2b9dd5bdff")
+			(uuid "569f0150-7a2b-4cdc-a08e-b86551f75daf")
 		)
 	)
 	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad"
@@ -6344,7 +6344,7 @@
 			(uuid "7a4ab66b-b6b0-44a2-a1a0-4c5e116976ae")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "d8005366-0eb4-42d9-b93d-58b7d4b7c3c4")
@@ -6354,7 +6354,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "e3206b85-cac7-403a-ba88-38e31ed86f99")
+			(uuid "5a42acb4-fe48-4439-821b-0322562c8508")
 			(effects
 				(font
 					(size 1 1)
@@ -6367,7 +6367,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0529a648-8988-402d-bfef-27591f4bcf5b")
+			(uuid "968ec066-f208-484f-bc44-c291730e87fb")
 			(effects
 				(font
 					(size 1 1)
@@ -6375,12 +6375,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2dd59f12-2e11-4187-9c64-e967e6274019")
+			(uuid "b0435aca-fc3a-434e-a2c6-0c805a7166bb")
 			(effects
 				(font
 					(size 1 1)
@@ -6393,7 +6393,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "14c4de46-da2d-4e1c-b00f-57baa3d04486")
+			(uuid "81be7611-27af-41c2-bd8a-2c88a42d9415")
 			(effects
 				(font
 					(size 1 1)
@@ -6406,7 +6406,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "bc79e1b8-51d8-436c-9b41-82132427fe96")
+			(uuid "127abb57-e8f8-4c62-b021-677ebffd07ca")
 			(effects
 				(font
 					(size 1 1)
@@ -6428,7 +6428,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "457d6bf0-d376-4575-93dd-8e9e5d242744")
+			(uuid "8d5f6afb-4024-4ef3-94d9-b2842df82899")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -6439,14 +6439,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "66e1ec03-a36e-4cc3-9429-a12ad1829ca4")
+			(uuid "63ee9bff-6f34-48ce-b60d-76d3ac1057eb")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "cf5a4a62-331f-40e6-961b-09bab7da0e13")
+			(uuid "88f51bde-e13c-4495-ae04-854e8714020b")
 			(effects
 				(font
 					(size 1 1)
@@ -6462,7 +6462,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "4afad430-da97-4ea8-a747-589245eb0da4")
+			(uuid "e70cb366-5466-4c97-859e-4533d47105a8")
 		)
 		(pad "2" smd rect
 			(at 1.1 0 180)
@@ -6472,10 +6472,10 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "f6a294a0-d6b5-4fea-9887-5a025840b4cf")
+			(uuid "f71a1f20-52a2-45de-8c40-d297433874eb")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "e341be45-def3-4ad8-94fe-8183288b10e9")
@@ -6485,7 +6485,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "bfa1f7b5-09b1-4794-a5d7-4ee690d520f9")
+			(uuid "014782b6-8751-4b2b-b82b-4195c815e239")
 			(effects
 				(font
 					(size 1 1)
@@ -6498,7 +6498,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "22c81a9f-fd49-4369-bf60-f34e3d7ad7ba")
+			(uuid "bbaf2a6d-77cc-4b14-ab57-bfbe9ee3b0d4")
 			(effects
 				(font
 					(size 1 1)
@@ -6506,12 +6506,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "34d2bb63-ffb2-410c-93f2-07b47eb33cc6")
+			(uuid "6dc4dc1a-1c79-48d7-bdfc-05235c775966")
 			(effects
 				(font
 					(size 1 1)
@@ -6524,7 +6524,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "72e16de1-9032-4ab2-9885-084f84602bf3")
+			(uuid "789a37ce-4cd2-4205-a2ad-282d5d9ad518")
 			(effects
 				(font
 					(size 1 1)
@@ -6537,7 +6537,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "00e288c9-935c-4190-b6f1-b844e0254c86")
+			(uuid "1fe7f2d1-c75d-42f8-81bf-674b5ca622cc")
 			(effects
 				(font
 					(size 1 1)
@@ -6559,7 +6559,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "e3640811-6505-4aaa-a3f2-b4b12670c0fc")
+			(uuid "907f0948-85cc-4db4-b748-8b6880609d4d")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -6570,14 +6570,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "123cbdda-d259-4da5-83a0-0fbadfc4731e")
+			(uuid "0741a4e7-8bfe-4a88-95d4-dfa5639b3930")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4cf5700a-e2bb-4849-887e-89548a6858ce")
+			(uuid "c406455d-93e5-4fd7-b745-e9653a922d72")
 			(effects
 				(font
 					(size 1 1)
@@ -6593,7 +6593,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "027d9cde-bdcf-418a-aa95-8f2368582067")
+			(uuid "5ee93598-977b-4dad-8ad9-4e1f06e74dd6")
 		)
 		(pad "2" smd rect
 			(at 1.1 0 180)
@@ -6603,10 +6603,10 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "2ba06f9c-7244-45a6-a243-93046b17ef60")
+			(uuid "39edf008-af6d-46b5-94fd-c9e4aea972e3")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "e526f93c-b80a-4df2-a303-6cdd0cc5188c")
@@ -6616,7 +6616,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "e15ae89f-adf8-4e4c-b35c-28b476423f8b")
+			(uuid "5014e677-9775-4e22-b395-7623f34ef4b0")
 			(effects
 				(font
 					(size 1 1)
@@ -6629,7 +6629,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fc14fee8-090f-45fd-b222-12ef1c40aaa0")
+			(uuid "d25918b2-66f4-4517-814a-d6ed2a1e9370")
 			(effects
 				(font
 					(size 1 1)
@@ -6637,12 +6637,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1759439e-7888-4bca-81e2-173eb2f3bb4a")
+			(uuid "7b452ee7-4f7c-459f-80dd-cf8d254a4d5e")
 			(effects
 				(font
 					(size 1 1)
@@ -6655,7 +6655,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9c37d1d3-fc24-4f2d-971c-feb2ad2c4212")
+			(uuid "4c5186c8-6eda-4464-8158-6de4c4d53d46")
 			(effects
 				(font
 					(size 1 1)
@@ -6668,7 +6668,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4b3c0fa9-857b-4905-9e5d-ae10ec9dc2ac")
+			(uuid "8109ebcc-c946-4f00-a0c8-f821204dd231")
 			(effects
 				(font
 					(size 1 1)
@@ -6690,7 +6690,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "cb494b35-08ec-4dd9-9bf5-87315602d1d9")
+			(uuid "2c62502d-7d18-48b9-babd-6aad502c3625")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -6701,14 +6701,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "213feb25-9ce3-4b5f-8d6c-f5cc72061faa")
+			(uuid "7418b029-318e-4164-9ae5-86add5567d65")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f870fb3c-070f-426e-8999-eafc32bffe52")
+			(uuid "fe9eaf77-0625-41a0-be2a-9ab6132224d8")
 			(effects
 				(font
 					(size 1 1)
@@ -6724,7 +6724,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "a7638180-7330-402e-af6d-62e48c901dee")
+			(uuid "17b53bcb-abd2-443c-b367-86c1412fecf8")
 		)
 		(pad "2" smd rect
 			(at 1.1 0 180)
@@ -6734,10 +6734,10 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "38e53d7d-87be-4bfa-b970-edc04e8fcabc")
+			(uuid "e0e71ea8-3963-43ed-abed-2641a613e04b")
 		)
 	)
-	(footprint "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+	(footprint "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "e9e6bcc0-9e04-4254-982c-e73fc9c57708")
@@ -6747,7 +6747,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "7f53b654-a5fb-4423-9689-8bdac917b87c")
+			(uuid "09f3d7c5-8b26-4368-9151-cc97668b425e")
 			(effects
 				(font
 					(size 1 1)
@@ -6760,7 +6760,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b3b7f89f-e4f4-4f9e-8e0d-ed503ff3271a")
+			(uuid "9b1b8b59-c334-4c28-9268-32b332dd48d0")
 			(effects
 				(font
 					(size 1 1)
@@ -6768,12 +6768,12 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:Inductor_0805_2012Metric_SMD_Vertical_Square"
+		(property "Footprint" "00-project-footprints:Inductor_0805_2012Metric_SMD_Vertical_Square"
 			(at 0 9.6 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "12fb2581-7b7c-4003-8949-acd90ebc89aa")
+			(uuid "0c33cb07-aac7-4ac8-8914-00aeb01ccead")
 			(effects
 				(font
 					(size 1 1)
@@ -6786,7 +6786,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "bdfa4e1f-aa30-43b5-8c02-cd2748525aa5")
+			(uuid "5899744d-f198-4c36-b958-f9ca3e30525c")
 			(effects
 				(font
 					(size 1 1)
@@ -6799,7 +6799,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5eca27a6-2134-45f6-99b8-8fe8064ffdcf")
+			(uuid "7e3c9409-f470-4cec-9dc0-92c7962ae4ca")
 			(effects
 				(font
 					(size 1 1)
@@ -6821,7 +6821,7 @@
 			)
 			(fill none)
 			(layer "Edge.Cuts")
-			(uuid "3dc3445d-12c3-496d-8237-1d4e741a869a")
+			(uuid "18ac04d5-bfb9-4bb5-bd72-35eed7022c77")
 		)
 		(fp_rect
 			(start -0.9 -0.9)
@@ -6832,14 +6832,14 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "39f668c8-32d6-49fd-992e-e276e68e6c70")
+			(uuid "a4b587b8-57f9-4d32-8535-f681032b8887")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 6.5 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "99545b93-385e-4696-afa5-0382d8101b96")
+			(uuid "eb2ca717-6916-46f9-b6ba-e907a17b6cb2")
 			(effects
 				(font
 					(size 1 1)
@@ -6855,7 +6855,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "a19d81bf-5aae-4bae-83ee-7d9bfbeae164")
+			(uuid "2e957286-e77b-4cdf-9fcc-1d82c490c7b3")
 		)
 		(pad "2" smd rect
 			(at 1.1 0)
@@ -6865,7 +6865,7 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "eb4c9242-41d2-420b-bd11-b13f141b86bb")
+			(uuid "0adedfdd-fcad-487d-b5bd-eccfaec8e6d4")
 		)
 	)
 	(footprint "MountingHole:MountingHole_3.2mm_M3_Pad"
@@ -6986,7 +6986,7 @@
 			(uuid "e6ed28c5-c49b-41c3-b75e-28e864c05dec")
 		)
 	)
-	(footprint "00-project-footprint-lib:PushButtonSMD_2.93x3.9"
+	(footprint "00-project-footprints:PushButtonSMD_2.93x3.9"
 		(layer "F.Cu")
 		(uuid "f9aa3430-8fc3-499a-8bf9-b1bf3db00f5d")
 		(at 134.55 104.7 -90)
@@ -6994,7 +6994,7 @@
 			(at 0.5 -2.5 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "3b14816a-7316-4038-b777-4a3da4fb3cf4")
+			(uuid "813f017d-e4a7-4442-abf8-79848e230220")
 			(effects
 				(font
 					(size 1 1)
@@ -7006,7 +7006,7 @@
 			(at 0.5 2.5 -90)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "ae873d9c-dec8-4317-9bce-f9f7ac8e3090")
+			(uuid "87c15e99-fd07-484e-8986-8e6f9bfaa308")
 			(effects
 				(font
 					(size 1 1)
@@ -7014,11 +7014,11 @@
 				)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:PushButtonSMD_2.93x3.9"
+		(property "Footprint" "00-project-footprints:PushButtonSMD_2.93x3.9"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a1cd5704-a620-4078-99a3-1b19536230c7")
+			(uuid "55dc2f18-8d39-4f62-a57d-32c6a44ea7ac")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7030,7 +7030,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b5995674-f7c0-4521-93fb-9198fdb5bfe3")
+			(uuid "10603637-05d5-4d7d-9cf7-652a73cb30a3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7042,7 +7042,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9e532f54-d240-4f20-a1ae-06ae66a4b52c")
+			(uuid "be78cc82-ba5c-481b-87ca-0830b18f1476")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7062,7 +7062,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "ad125e1e-f4ed-4df7-965b-44c3f660fa85")
+			(uuid "98319c50-a249-44ae-818b-6632ded025be")
 		)
 		(fp_line
 			(start 2 1.65)
@@ -7072,7 +7072,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "e9be2ac6-e191-41f1-80f8-49b2f3d0a5f6")
+			(uuid "b8b23d7e-63f5-4e91-a527-eb2990439992")
 		)
 		(fp_line
 			(start 2 1.15)
@@ -7082,7 +7082,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "926ee9d9-48c8-4bd2-af3f-b8190f580570")
+			(uuid "679b8755-6410-43e1-b4fc-cad7f5a4c1e6")
 		)
 		(fp_line
 			(start -2 -1.1)
@@ -7092,7 +7092,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "a61e5e7c-c5cf-4b2a-a198-efd522e317b9")
+			(uuid "6efd80ca-6e64-4e0c-a503-566eda115d46")
 		)
 		(fp_line
 			(start -2 -1.6)
@@ -7102,7 +7102,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "5301ea97-f5b7-4ee7-9033-bcdd5efb68fe")
+			(uuid "0efb64cc-aca8-4786-9ef1-4e7dc9cfeeee")
 		)
 		(fp_line
 			(start 2 -1.6)
@@ -7112,7 +7112,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "55ad3ef4-1578-47cc-be72-4cead6733070")
+			(uuid "e2ab6f56-d966-43d8-895a-823b4d592a77")
 		)
 		(fp_circle
 			(center 0 0)
@@ -7123,7 +7123,7 @@
 			)
 			(fill none)
 			(layer "F.SilkS")
-			(uuid "4a6f8b2b-2982-4f77-aaae-bcbd7fc127a3")
+			(uuid "081b274b-9e0d-4d43-a756-8e336b6b492e")
 		)
 		(fp_rect
 			(start -3.5 -2)
@@ -7134,13 +7134,13 @@
 			)
 			(fill none)
 			(layer "F.CrtYd")
-			(uuid "37d2d274-8cb4-415b-a28c-0199d087ca65")
+			(uuid "99943a7d-2e92-4592-8a62-de1b6700f516")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0.5 4 -90)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "b94e7e41-98bf-460f-a02d-e994ecd67872")
+			(uuid "1289c4bf-ab9b-4815-b810-639cbcb2658e")
 			(effects
 				(font
 					(size 1 1)
@@ -7157,7 +7157,7 @@
 			(pinfunction "1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "49264e53-2991-49cf-86eb-da2a6786ad08")
+			(uuid "5133f994-cb0c-49f2-ba72-450368102693")
 		)
 		(pad "2" smd roundrect
 			(at 2 0 270)
@@ -7168,7 +7168,7 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "d6a6a87b-fda9-451a-8124-8bf606a076a7")
+			(uuid "66f4e087-fff9-4048-b4e4-5d461c7561dd")
 		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"

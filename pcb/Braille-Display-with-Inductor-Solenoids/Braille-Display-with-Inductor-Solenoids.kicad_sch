@@ -5,12 +5,12 @@
 	(uuid "3829a125-89bd-48f9-bfbe-92d753eb8f7f")
 	(paper "USLetter")
 	(lib_symbols
-		(symbol "00-project-symbol-lib:RP2040-Zero"
+		(symbol "00-project-symbols:RP2040-Zero"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
-				(at 0 0 0)
+			(property "Reference" "U1"
+				(at 0 12.7 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -18,14 +18,14 @@
 				)
 			)
 			(property "Value" "RP2040-Zero"
-				(at 0 8.89 0)
+				(at 0 10.16 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "00-project-footprint-lib:RP2040 Zero"
 				(at -5.08 0 0)
 				(effects
 					(font
@@ -3256,7 +3256,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:PushButtonSMD_2.93x3.9"
+		(property "Footprint" "00-project-footprints:PushButtonSMD_2.93x3.9"
 			(at 67.31 158.75 0)
 			(effects
 				(font
@@ -3293,137 +3293,6 @@
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
 					(reference "SW1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "00-project-symbol-lib:RP2040-Zero")
-		(at 64.77 48.26 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "46d3b499-bf16-4b99-8c46-ac5f1c0aafc8")
-		(property "Reference" "U1"
-			(at 64.77 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "RP2040-Zero"
-			(at 64.77 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "00-project-footprint-lib:RP2040 Zero"
-			(at 59.69 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 59.69 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 64.77 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ef6902ce-7383-4929-9403-5fd13fe8b760")
-		)
-		(pin "21"
-			(uuid "4d39bd61-ea2a-4f9c-82a0-5929dbd90353")
-		)
-		(pin "9"
-			(uuid "6ef3c561-48d2-40b4-820e-559f56874999")
-		)
-		(pin "17"
-			(uuid "fffac4a3-a777-49c2-98be-82393b0af6f0")
-		)
-		(pin "8"
-			(uuid "7bf2f940-3acb-4635-be3c-79008c355047")
-		)
-		(pin "19"
-			(uuid "1f3f75ac-bda7-4fda-834b-83d76ad0251c")
-		)
-		(pin "5"
-			(uuid "6415309d-c7f0-4c2c-8312-fc1963e244a8")
-		)
-		(pin "18"
-			(uuid "ecd238d7-437e-4d86-a2fd-ed8adb22bedc")
-		)
-		(pin "6"
-			(uuid "61480709-0d55-46ab-b02e-77fd9bdc7ad7")
-		)
-		(pin "20"
-			(uuid "1e53d6e2-420f-435c-8a7a-d14505e8f699")
-		)
-		(pin "7"
-			(uuid "05eda6a6-381f-40f6-8fe5-f0b545bee3d2")
-		)
-		(pin "4"
-			(uuid "1a77725b-edce-42fb-834e-d1d2b6fad7a7")
-		)
-		(pin "3"
-			(uuid "51e0f8a0-01d8-4a3d-a5ab-375947024f24")
-		)
-		(pin "23"
-			(uuid "d265961f-53d1-48d1-8b4e-4c818e961724")
-		)
-		(pin "11"
-			(uuid "b0584043-4315-4cae-8496-7445ef446610")
-		)
-		(pin "14"
-			(uuid "ee7d3232-5217-45ac-949e-7d7cd0f84e4a")
-		)
-		(pin "15"
-			(uuid "77a4ef71-ca1e-40f8-bf4b-037047d4159f")
-		)
-		(pin "22"
-			(uuid "a18544bd-4179-422d-9dc5-57bcbc6b5860")
-		)
-		(pin "13"
-			(uuid "0204faee-9a36-42e5-b642-d90efb008cea")
-		)
-		(pin "12"
-			(uuid "ec43d86f-29ce-4ef1-9e04-84e721beff6f")
-		)
-		(pin "1"
-			(uuid "4e888cc8-a46e-4053-b37b-5179a98f2bb4")
-		)
-		(pin "10"
-			(uuid "70cc039c-ca76-41c8-91bf-07316bba031b")
-		)
-		(pin "16"
-			(uuid "3c8e01ed-5e3b-40a6-915b-f9c9ea60643b")
-		)
-		(instances
-			(project ""
-				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -4309,6 +4178,137 @@
 		)
 	)
 	(symbol
+		(lib_id "00-project-symbols:RP2040-Zero")
+		(at 64.77 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9e35c5ae-6761-4de9-aa1a-e9aa527561f6")
+		(property "Reference" "U1"
+			(at 64.77 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "RP2040-Zero"
+			(at 64.77 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "00-project-footprints:RP2040 Zero"
+			(at 59.69 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 59.69 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 64.77 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "14"
+			(uuid "c2d6ee70-86d8-4754-a27c-125595adcad4")
+		)
+		(pin "13"
+			(uuid "b3466191-41f8-4753-b134-6fce80e325a9")
+		)
+		(pin "11"
+			(uuid "59db9741-8c69-42dc-8354-1550fe1436a0")
+		)
+		(pin "12"
+			(uuid "ae06b79e-94a6-4f44-bf78-9063fdd614c7")
+		)
+		(pin "15"
+			(uuid "d87bac41-aa4f-4f51-b745-d5c78a0e6f7b")
+		)
+		(pin "10"
+			(uuid "c697551c-81af-4bde-8323-d733170fb483")
+		)
+		(pin "8"
+			(uuid "089d58ac-02b8-48f1-8622-71aae7387711")
+		)
+		(pin "20"
+			(uuid "cd9b73ed-1f3b-48b9-b5a5-3dc67a52c850")
+		)
+		(pin "3"
+			(uuid "655551ea-ca31-4b5b-9d01-0b6cb6b4072b")
+		)
+		(pin "21"
+			(uuid "24447af0-2d05-418e-b81f-b0b52df48146")
+		)
+		(pin "5"
+			(uuid "105ecb7f-a3ae-4056-a58b-7dba27e77514")
+		)
+		(pin "7"
+			(uuid "acb0f89f-53ba-4836-b3d5-1c2d9ada6d0e")
+		)
+		(pin "16"
+			(uuid "bcf69837-067d-496a-b1c5-74839a99a3f0")
+		)
+		(pin "23"
+			(uuid "7374198c-0736-4f98-b977-272d6601a29e")
+		)
+		(pin "17"
+			(uuid "e6bd010c-b6e5-4195-989d-fbcd5a8048d1")
+		)
+		(pin "19"
+			(uuid "e4211e24-8d0c-4e19-807b-e720a41962cb")
+		)
+		(pin "22"
+			(uuid "c936f480-c33a-4798-bb2b-36133b66b9d4")
+		)
+		(pin "18"
+			(uuid "a41a0313-7099-493a-851c-fc01a550e3ca")
+		)
+		(pin "2"
+			(uuid "4f62d05c-4ed8-467f-9a7b-d1c5af83590f")
+		)
+		(pin "6"
+			(uuid "2ed95dfa-b875-4174-80f3-ac3047261ce5")
+		)
+		(pin "4"
+			(uuid "1bfaa79c-1319-4111-8fe1-a223530d8edb")
+		)
+		(pin "9"
+			(uuid "0ac8434d-49de-4106-990d-9d998642cc1e")
+		)
+		(pin "1"
+			(uuid "928c0f99-ea29-485a-bcd0-e1f8160eaa61")
+		)
+		(instances
+			(project ""
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 44.45 48.26 90)
 		(unit 1)
@@ -4403,7 +4403,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "00-project-footprint-lib:PushButtonSMD_2.93x3.9"
+		(property "Footprint" "00-project-footprints:PushButtonSMD_2.93x3.9"
 			(at 85.09 158.75 0)
 			(effects
 				(font
