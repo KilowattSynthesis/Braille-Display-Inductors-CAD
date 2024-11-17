@@ -537,6 +537,30 @@
       "/Braille_Cell3/DOT4_A": "Tight",
       "/Braille_Cell3/DOT5_A": "Tight",
       "/Braille_Cell3/DOT6_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell/DOT1_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell/DOT2_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell/DOT3_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell/DOT4_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell/DOT5_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell/DOT6_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell1/DOT1_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell1/DOT2_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell1/DOT3_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell1/DOT4_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell1/DOT5_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell1/DOT6_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell2/DOT1_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell2/DOT2_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell2/DOT3_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell2/DOT4_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell2/DOT5_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell2/DOT6_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell3/DOT1_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell3/DOT2_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell3/DOT3_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell3/DOT4_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell3/DOT5_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell3/DOT6_A": "Tight",
       "Net-(B1-1B)": "Tight",
       "Net-(B1-2B)": "Tight",
       "Net-(B1-3B)": "Tight",
@@ -752,20 +776,24 @@
       "Root"
     ],
     [
-      "4f3edd70-891a-4f94-8557-12825fefafc2",
+      "fb3b1da4-7011-461c-8537-8ba6b91cb3dc",
       "Braille_Cell"
     ],
     [
-      "c1a292f1-c63d-475e-95f3-83f35e7bb85c",
+      "55162da9-4257-4f57-9e38-bff5b99e84aa",
       "Braille_Cell1"
     ],
     [
-      "e70e575a-774c-4ea4-a5e0-b1a6a9f5435a",
+      "59cbbb5d-4a8b-420e-b7ff-ab92dead0067",
       "Braille_Cell2"
     ],
     [
-      "b66a03fd-432d-4b9f-82a4-ed0f6f4c5d30",
+      "69e1760a-9ce9-4dd2-bdb0-29d48ad2f691",
       "Braille_Cell3"
+    ],
+    [
+      "508cfeb6-61a5-4af4-970c-045ef9c703bd",
+      "Braille_Cells_and_Controls"
     ]
   ],
   "text_variables": {}
