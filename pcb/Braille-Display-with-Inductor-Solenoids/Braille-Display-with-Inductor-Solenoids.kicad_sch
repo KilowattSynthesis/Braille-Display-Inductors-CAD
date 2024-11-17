@@ -6519,7 +6519,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "00-project-footprints:SOICbite_clipProgSmall"
 			(at 73.66 80.01 0)
 			(effects
 				(font
