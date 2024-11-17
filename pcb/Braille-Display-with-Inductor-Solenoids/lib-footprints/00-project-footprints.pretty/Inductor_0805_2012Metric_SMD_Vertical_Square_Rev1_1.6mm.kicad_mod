@@ -1,8 +1,7 @@
-(footprint "Inductor_0805_2012Metric_SMD_Vertical_Square"
+(footprint "Inductor_0805_2012Metric_SMD_Vertical_Square_Rev1_1.6mm"
 	(version 20240108)
 	(generator "pcbnew")
 	(generator_version "8.0")
-	(locked yes)
 	(layer "F.Cu")
 	(property "Reference" "L14"
 		(at 0.199999 3.8 0)
