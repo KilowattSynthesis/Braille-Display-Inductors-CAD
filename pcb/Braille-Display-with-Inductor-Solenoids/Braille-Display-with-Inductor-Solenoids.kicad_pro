@@ -642,6 +642,10 @@
       {
         "netclass": "Power",
         "pattern": "VDC"
+      },
+      {
+        "netclass": "Tight",
+        "pattern": "*DOT*"
       }
     ]
   },
