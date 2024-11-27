@@ -4,6 +4,10 @@
 	(generator_version "8.0")
 	(uuid "2cd51479-412f-48a3-af9e-1108938fa36b")
 	(paper "USLetter")
+	(title_block
+		(date "2024-11-27")
+		(rev "Rev 2")
+	)
 	(lib_symbols
 		(symbol "00-project-symbols:AD116_H_Bridge"
 			(exclude_from_sim no)
