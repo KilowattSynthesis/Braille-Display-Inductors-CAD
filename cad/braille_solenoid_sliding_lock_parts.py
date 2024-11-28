@@ -70,9 +70,19 @@ class GeneralSpec:
     dot_ui_length: float = 1.0
     dot_ui_round_radius: float = 0.6
 
+    stencil_thickness: float = 0.25  # Actually 0.15, but leave some space.
+    border_around_stencil: float = 2  # Contact between top and bottom housing.
+    stencil_gripper_width_y = 3
+    stencil_gripper_spacing_y = 5.8
+
     def __post_init__(self) -> None:
         """Post initialization checks."""
         assert self.dot_cones_height * 2 <= self.dot_total_length
+
+        stencil_gripper_gap_width = (
+            self.stencil_gripper_spacing_y - self.stencil_gripper_width_y
+        )
+        assert stencil_gripper_gap_width > self.mounting_hole_diameter
 
     @property
     def total_housing_x(self) -> float:
@@ -88,15 +98,39 @@ class GeneralSpec:
         """Total height of the braille housing."""
         return self.dot_pitch_y * (3 - 1) + self.border_y * 2
 
+    @property
+    def top_housing_thickness(self) -> float:
+        """Thickness of the top housing.
 
-def make_bottom_housing(g_spec: GeneralSpec) -> bd.Part:
+        Note: The stencil gets removed from this thickness.
+
+        This thickness gets set such that the top of the dot is flush with the
+        top of the housing, when in the "down" position.
+        """
+        return self.dot_cones_height + self.dot_travel_distance
+
+    @property
+    def total_housing_z(self) -> float:
+        """Total height of the braille housing."""
+        return self.bottom_housing_thickness + self.top_housing_thickness
+
+    @property
+    def stencil_travel_distance(self) -> float:
+        """Travel distance of the stencil.
+
+        The stencil must travel the large radius, plus the small radius.
+        """
+        return self.dot_min_diameter / 2 + self.dot_diameter / 2
+
+
+def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
     """Create a CAD model of bottom_housing."""
     p = bd.Part(None)
 
     p += bd.Box(
         g_spec.total_housing_x,
         g_spec.total_housing_y,
-        g_spec.bottom_housing_thickness,
+        g_spec.total_housing_z,
         align=bde.align.ANCHOR_BOTTOM,
     )
 
@@ -126,7 +160,7 @@ def make_bottom_housing(g_spec: GeneralSpec) -> bd.Part:
         ):
             p -= bd.Cylinder(
                 radius=g_spec.dot_hole_diameter / 2,
-                height=g_spec.bottom_housing_thickness,
+                height=g_spec.total_housing_z,
                 align=bde.align.ANCHOR_BOTTOM,
             ).translate((dot_x, dot_y, 0))
 
@@ -134,14 +168,15 @@ def make_bottom_housing(g_spec: GeneralSpec) -> bd.Part:
     for x_side, y_val in product([-1, 1], [0]):
         p -= bd.Cylinder(
             radius=g_spec.mounting_hole_diameter / 2,
-            height=g_spec.bottom_housing_thickness,
+            height=g_spec.total_housing_z,
             align=bde.align.ANCHOR_BOTTOM,
         ).translate(
             (
                 x_side
                 * (
                     g_spec.x_dist_to_mounting_holes
-                    + g_spec.cell_pitch_x * g_spec.cell_count_x / 2
+                    + g_spec.cell_pitch_x * (g_spec.cell_count_x - 1) / 2
+                    + g_spec.dot_pitch_x / 2
                 ),
                 y_val,
                 0,
@@ -160,22 +195,75 @@ def make_bottom_housing(g_spec: GeneralSpec) -> bd.Part:
                 x_side
                 * (
                     g_spec.x_dist_to_mounting_holes
-                    + g_spec.cell_pitch_x * g_spec.cell_count_x / 2
+                    + g_spec.cell_pitch_x * (g_spec.cell_count_x - 1) / 2
+                    + g_spec.dot_pitch_x / 2
                 ),
                 y_side * g_spec.mounting_hole_spacing_y,
                 0,
             )
         )
 
+    # Remove the stencil body.
+    p -= bd.Box(
+        (
+            g_spec.total_housing_x
+            - 2 * g_spec.border_around_stencil
+            + g_spec.stencil_travel_distance
+            + 0.2  # Just a bit extra to let it shift as necessary.
+        ),
+        g_spec.total_housing_y - 2 * g_spec.border_around_stencil,
+        g_spec.stencil_thickness,
+        align=bde.align.ANCHOR_BOTTOM,
+    ).translate((0, 0, g_spec.bottom_housing_thickness))
+
+    # Remove the stencil gripper grooves.
+    for y_val in evenly_space_with_center(
+        count=2, spacing=g_spec.stencil_gripper_spacing_y
+    ):
+        p -= bd.Box(
+            g_spec.total_housing_x,
+            g_spec.stencil_gripper_width_y,
+            g_spec.stencil_thickness,
+            align=bde.align.ANCHOR_BOTTOM,
+        ).translate(
+            (
+                0,
+                y_val,
+                g_spec.bottom_housing_thickness,
+            )
+        )
+
     return p
 
 
-@dataclass
-class DotSpec:
-    """Specs for the dot cylinder."""
+def make_bottom_housing(g_spec: GeneralSpec) -> bd.Part:
+    """From the housing model, keep only the bottom part."""
+    p = make_full_housing(g_spec)
 
-    def __post_init__(self) -> None:
-        """Post initialization checks."""
+    # Keep only the bottom part.
+    p -= bd.Box(
+        g_spec.total_housing_x,
+        g_spec.total_housing_y,
+        g_spec.top_housing_thickness,
+        align=bde.align.ANCHOR_BOTTOM,
+    ).translate((0, 0, g_spec.bottom_housing_thickness))
+
+    return p
+
+
+def make_top_housing(g_spec: GeneralSpec) -> bd.Part:
+    """From the housing model, keep only the top part."""
+    p = make_full_housing(g_spec)
+
+    # Keep only the top part.
+    p -= bd.Box(
+        g_spec.total_housing_x,
+        g_spec.total_housing_y,
+        g_spec.bottom_housing_thickness + 10,
+        align=bde.align.ANCHOR_TOP,
+    ).translate((0, 0, g_spec.bottom_housing_thickness))
+
+    return p
 
 
 def make_dot(g_spec: GeneralSpec) -> bd.Part:
@@ -287,9 +375,11 @@ def make_assembly(g_spec: GeneralSpec) -> bd.Part:
 
 if __name__ == "__main__":
     parts = {
-        "bottom_housing": show(make_bottom_housing(GeneralSpec())),
-        "dot": show(make_dot(GeneralSpec())),
-        "assembly": show(make_assembly(GeneralSpec())),
+        "full_housing": (make_full_housing(GeneralSpec())),
+        "dot": (make_dot(GeneralSpec())),
+        "bottom_housing": (make_bottom_housing(GeneralSpec())),
+        "top_housing": show(make_top_housing(GeneralSpec())),
+        "assembly": (make_assembly(GeneralSpec())),
     }
 
     logger.info("Showing CAD model(s)")
