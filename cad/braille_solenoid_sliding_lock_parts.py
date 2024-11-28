@@ -337,6 +337,20 @@ def make_stencil_2d(g_spec: GeneralSpec) -> bd.Shape:
     return p
 
 
+def make_stencil_3d(
+    g_spec: GeneralSpec, thickness_override: float | None = None
+) -> bd.Part:
+    """Make a 3d version of the stencil."""
+    p = bd.Part(None)
+
+    p += bd.extrude(
+        bd.Sketch(None) + make_stencil_2d(g_spec),
+        amount=thickness_override or g_spec.stencil_thickness,
+    )
+
+    return p
+
+
 def make_dot(g_spec: GeneralSpec) -> bd.Part:
     """Create a CAD model of a braille dot in the Z axis.
 
@@ -493,6 +507,7 @@ if __name__ == "__main__":
         "top_housing": (make_top_housing(GeneralSpec())),
         "assembly": show(make_assembly(GeneralSpec())),
         "stencil_2d": (make_stencil_2d(GeneralSpec())),
+        "stencil_3d": (make_stencil_3d(GeneralSpec())),
         "many_assemblies": show(make_many_assemblies(GeneralSpec())),
     }
 
