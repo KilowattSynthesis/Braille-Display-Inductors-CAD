@@ -54,8 +54,25 @@ class GeneralSpec:
     # TODO(KilowattSynthesis): Make a property.
     bottom_housing_thickness: float = 5.0
 
+    # Distance the dot expects to travel.
+    dot_travel_distance: float = 1.0
+    dot_min_diameter: float = 1.0
+    dot_total_length: float = 5
+    dot_cones_height: float = 0.4
+
+    dot_magnet_diameter: float = 1.0
+    dot_magnet_height: float = 1.0
+
+    # Distance from the top of the magnet to the Z=0 plane.
+    dot_magnet_top_dist_below_z0: float = 0.4  # Start around bottom of cone.
+
+    # TODO(KilowattSynthesis): Check or set dynamically.
+    dot_ui_length: float = 1.0
+    dot_ui_round_radius: float = 0.6
+
     def __post_init__(self) -> None:
         """Post initialization checks."""
+        assert self.dot_cones_height * 2 <= self.dot_total_length
 
     @property
     def total_housing_x(self) -> float:
@@ -153,9 +170,94 @@ def make_bottom_housing(g_spec: GeneralSpec) -> bd.Part:
     return p
 
 
+@dataclass
+class DotSpec:
+    """Specs for the dot cylinder."""
+
+    def __post_init__(self) -> None:
+        """Post initialization checks."""
+
+
+def make_dot(g_spec: GeneralSpec) -> bd.Part:
+    """Create a CAD model of a braille dot in the Z axis.
+
+    At Z=0: The small part of the cone which makes the dot stick out
+        (bottom cone).
+
+    At Z=1: The small part of the cone which makes the dot recessed
+        (top cone).
+
+    Note that Z = 1 = g_spec.dot_travel_distance
+    """
+    p = bd.Part(None)
+
+    cone_pointer = (
+        bd.Part(None)
+        # Make cone below Z=0.
+        + bd.Cone(
+            bottom_radius=g_spec.dot_diameter / 2,
+            top_radius=g_spec.dot_min_diameter / 2,
+            height=g_spec.dot_cones_height,
+            align=bde.align.ANCHOR_TOP,
+        )
+        # Make the cone above Z=0.
+        + bd.Cone(
+            bottom_radius=g_spec.dot_min_diameter / 2,
+            top_radius=g_spec.dot_diameter / 2,
+            height=g_spec.dot_cones_height,
+            align=bde.align.ANCHOR_BOTTOM,
+        )
+    )
+
+    # Add the cone pointer around Z=0.
+    p += cone_pointer
+
+    # Add the cone pointer around Z=1.
+    p += cone_pointer.translate((0, 0, g_spec.dot_travel_distance))
+
+    # Add the cylinder between the cones.
+    p += bd.Cylinder(
+        radius=g_spec.dot_diameter / 2,
+        height=g_spec.dot_travel_distance - 2 * g_spec.dot_cones_height,
+        align=bde.align.ANCHOR_BOTTOM,
+    ).translate((0, 0, g_spec.dot_cones_height))
+
+    # Add the cylinder below the bottom cone for around the magnet.
+    p += bd.Cylinder(
+        radius=g_spec.dot_diameter / 2,
+        height=(
+            g_spec.dot_magnet_height
+            + g_spec.dot_magnet_top_dist_below_z0
+            - g_spec.dot_cones_height
+        ),
+        align=bde.align.ANCHOR_TOP,
+    ).translate((0, 0, -g_spec.dot_cones_height))
+
+    # Draw the magnet (removing space for it).
+    p -= bd.Cylinder(
+        radius=g_spec.dot_magnet_diameter / 2,
+        height=g_spec.dot_magnet_height,
+        align=bde.align.ANCHOR_TOP,
+    ).translate((0, 0, -g_spec.dot_magnet_top_dist_below_z0))
+
+    # Draw the top of the top (user interface).
+    ui_top = bd.Part(None) + bd.Cylinder(
+        radius=g_spec.dot_diameter / 2,
+        height=g_spec.dot_ui_length,
+        align=bde.align.ANCHOR_BOTTOM,
+    )
+    p += ui_top.fillet(
+        radius=g_spec.dot_ui_round_radius,
+        edge_list=bde.top_face_of(ui_top).edges(),
+    ).translate((0, 0, g_spec.dot_travel_distance + g_spec.dot_cones_height))
+
+    return p
+
+
 if __name__ == "__main__":
     parts = {
         "bottom_housing": show(make_bottom_housing(GeneralSpec())),
+        "dot": show(make_dot(GeneralSpec())),
     }
 
     logger.info("Showing CAD model(s)")
@@ -164,7 +266,9 @@ if __name__ == "__main__":
         exist_ok=True
     )
     for name, part in parts.items():
-        assert isinstance(part, bd.Part | bd.Solid), f"{name} is not a Part"
+        assert isinstance(
+            part, bd.Part | bd.Solid | bd.Compound
+        ), f"{name} is not a Part"
         # assert part.is_manifold is True, f"{name} is not manifold"
 
         bd.export_stl(part, str(export_folder / f"{name}.stl"))
