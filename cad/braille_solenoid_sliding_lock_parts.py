@@ -19,6 +19,7 @@ Stackup:
 from dataclasses import dataclass
 from itertools import product
 from pathlib import Path
+from typing import Literal
 
 import build123d as bd
 import build123d_ease as bde
@@ -74,6 +75,7 @@ class GeneralSpec:
     border_around_stencil: float = 2  # Contact between top and bottom housing.
     stencil_gripper_width_y = 3
     stencil_gripper_spacing_y = 5.8
+    stencil_gripped_extension_x: float = 15
 
     def __post_init__(self) -> None:
         """Post initialization checks."""
@@ -83,6 +85,11 @@ class GeneralSpec:
             self.stencil_gripper_spacing_y - self.stencil_gripper_width_y
         )
         assert stencil_gripper_gap_width > self.mounting_hole_diameter
+
+        info = {
+            "mounting_hole_spacing_x": self.mounting_hole_spacing_x,
+        }
+        logger.success(info)
 
     @property
     def total_housing_x(self) -> float:
@@ -121,6 +128,15 @@ class GeneralSpec:
         The stencil must travel the large radius, plus the small radius.
         """
         return self.dot_min_diameter / 2 + self.dot_diameter / 2
+
+    @property
+    def mounting_hole_spacing_x(self) -> float:
+        """Spacing between the mounting holes, in X axis."""
+        return (
+            self.x_dist_to_mounting_holes * 2
+            + self.cell_pitch_x * (self.cell_count_x - 1)
+            + self.dot_pitch_x
+        )
 
 
 def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
@@ -172,12 +188,7 @@ def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
             align=bde.align.ANCHOR_BOTTOM,
         ).translate(
             (
-                x_side
-                * (
-                    g_spec.x_dist_to_mounting_holes
-                    + g_spec.cell_pitch_x * (g_spec.cell_count_x - 1) / 2
-                    + g_spec.dot_pitch_x / 2
-                ),
+                x_side * g_spec.mounting_hole_spacing_x / 2,
                 y_val,
                 0,
             )
@@ -192,12 +203,7 @@ def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
             align=bde.align.ANCHOR_TOP,
         ).translate(
             (
-                x_side
-                * (
-                    g_spec.x_dist_to_mounting_holes
-                    + g_spec.cell_pitch_x * (g_spec.cell_count_x - 1) / 2
-                    + g_spec.dot_pitch_x / 2
-                ),
+                x_side * g_spec.mounting_hole_spacing_x / 2,
                 y_side * g_spec.mounting_hole_spacing_y,
                 0,
             )
@@ -262,6 +268,71 @@ def make_top_housing(g_spec: GeneralSpec) -> bd.Part:
         g_spec.bottom_housing_thickness + 10,
         align=bde.align.ANCHOR_TOP,
     ).translate((0, 0, g_spec.bottom_housing_thickness))
+
+    return p
+
+
+def make_stencil_2d(g_spec: GeneralSpec) -> bd.Shape:
+    """Make a 2d version of the stencil."""
+    # Add the stencil body.
+    p = bd.Rectangle(
+        g_spec.total_housing_x - 2 * g_spec.border_around_stencil - 0.2,
+        g_spec.total_housing_y - 2 * g_spec.border_around_stencil - 0.2,
+    )
+
+    # Add the stencil grippers.
+    for y_val in evenly_space_with_center(
+        count=2, spacing=g_spec.stencil_gripper_spacing_y
+    ):
+        p += bd.Rectangle(
+            g_spec.total_housing_x + g_spec.stencil_gripped_extension_x * 2,
+            g_spec.stencil_gripper_width_y - 0.2,
+        ).translate((0, y_val))
+
+    # Remove the holes. Each hole is a hull between the big and small circles.
+    for cell_x, cell_y in product(
+        evenly_space_with_center(
+            count=g_spec.cell_count_x,
+            spacing=g_spec.cell_pitch_x,
+        ),
+        evenly_space_with_center(
+            count=g_spec.cell_count_y,
+            spacing=g_spec.dot_pitch_y,
+        ),
+    ):
+        for dot_x, dot_y in product(
+            evenly_space_with_center(
+                count=2,
+                spacing=g_spec.dot_pitch_x,
+                center=cell_x,
+            ),
+            evenly_space_with_center(
+                count=3,
+                spacing=g_spec.dot_pitch_y,
+                center=cell_y,
+            ),
+        ):
+            p -= bd.make_hull(
+                bd.Circle(g_spec.dot_hole_diameter / 2)
+                .translate((-g_spec.stencil_travel_distance / 2, 0))
+                .edges()
+                + bd.Circle(g_spec.dot_min_diameter / 2)
+                .translate((g_spec.stencil_travel_distance / 2, 0))
+                .edges()
+            ).translate((dot_x, dot_y))
+
+    # Remove the mounting screws.
+    for x_val in evenly_space_with_center(
+        count=2, spacing=g_spec.mounting_hole_spacing_x
+    ):
+        p -= bd.make_hull(
+            bd.Circle(g_spec.mounting_hole_diameter / 2)
+            .translate((-g_spec.stencil_travel_distance / 2, 0))
+            .edges()
+            + bd.Circle(g_spec.mounting_hole_diameter / 2)
+            .translate((g_spec.stencil_travel_distance / 2, 0))
+            .edges(),
+        ).translate((x_val, 0))
 
     return p
 
@@ -342,11 +413,23 @@ def make_dot(g_spec: GeneralSpec) -> bd.Part:
     return p
 
 
-def make_assembly(g_spec: GeneralSpec) -> bd.Part:
+def make_assembly(
+    g_spec: GeneralSpec,
+    stencil_shift: Literal[0, -1, 1] = 0,
+    housing_select: Literal["top", "bottom", "full"] = "bottom",
+) -> bd.Part:
     """Create a CAD model of the entire assembly."""
     p = bd.Part(None)
 
-    p += make_bottom_housing(g_spec)
+    if housing_select == "top":
+        p += make_top_housing(g_spec)
+    elif housing_select == "bottom":
+        p += make_bottom_housing(g_spec)
+    elif housing_select == "full":
+        p += make_full_housing(g_spec)
+    else:
+        msg = f"Unknown housing_select: {housing_select}"
+        raise ValueError(msg)
 
     cell_center_x = (
         -g_spec.cell_pitch_x / 2 if g_spec.cell_count_x % 2 == 0 else 0
@@ -370,6 +453,35 @@ def make_assembly(g_spec: GeneralSpec) -> bd.Part:
         )
     )
 
+    # Draw the stencil.
+    p += bd.extrude(
+        bd.Sketch(None) + make_stencil_2d(g_spec),
+        amount=g_spec.stencil_thickness,
+    ).translate(
+        (
+            g_spec.stencil_travel_distance / 2 * stencil_shift,
+            0,
+            g_spec.bottom_housing_thickness,
+        )
+    )
+
+    return p
+
+
+def make_many_assemblies(g_spec: GeneralSpec) -> bd.Part:
+    """Create a CAD model of the entire assembly."""
+    p = bd.Part(None)
+
+    for housing_select, z_val in zip(
+        ("top", "bottom"), (0, g_spec.total_housing_z + 5), strict=True
+    ):
+        for stencil_shift in (-1, 1):
+            p += make_assembly(
+                g_spec, stencil_shift, housing_select=housing_select
+            ).translate(
+                (0, stencil_shift / 2 * (g_spec.total_housing_y + 3.5), z_val)
+            )
+
     return p
 
 
@@ -378,20 +490,25 @@ if __name__ == "__main__":
         "full_housing": (make_full_housing(GeneralSpec())),
         "dot": (make_dot(GeneralSpec())),
         "bottom_housing": (make_bottom_housing(GeneralSpec())),
-        "top_housing": show(make_top_housing(GeneralSpec())),
-        "assembly": (make_assembly(GeneralSpec())),
+        "top_housing": (make_top_housing(GeneralSpec())),
+        "assembly": show(make_assembly(GeneralSpec())),
+        "stencil_2d": (make_stencil_2d(GeneralSpec())),
+        "many_assemblies": show(make_many_assemblies(GeneralSpec())),
     }
 
-    logger.info("Showing CAD model(s)")
+    logger.info("Saving CAD model(s)")
 
     (export_folder := Path(__file__).parent.with_name("build")).mkdir(
         exist_ok=True
     )
     for name, part in parts.items():
-        assert isinstance(
-            part, bd.Part | bd.Solid | bd.Compound
-        ), f"{name} is not a Part"
-        # assert part.is_manifold is True, f"{name} is not manifold"
-
-        bd.export_stl(part, str(export_folder / f"{name}.stl"))
-        bd.export_step(part, str(export_folder / f"{name}.step"))
+        if isinstance(part, bd.Part | bd.Solid | bd.Compound):
+            bd.export_stl(part, str(export_folder / f"{name}.stl"))
+            bd.export_step(part, str(export_folder / f"{name}.step"))
+        elif isinstance(part, bd.Shape):
+            # bd.export_svg(part, str(export_folder / f"{name}.svg"))
+            pass
+            # TODO(KilowattSynthesis): Export SVG.
+        else:
+            msg = f"Unknown type for {name}"
+            raise NotImplementedError(msg)
