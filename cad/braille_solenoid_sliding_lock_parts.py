@@ -254,10 +254,42 @@ def make_dot(g_spec: GeneralSpec) -> bd.Part:
     return p
 
 
+def make_assembly(g_spec: GeneralSpec) -> bd.Part:
+    """Create a CAD model of the entire assembly."""
+    p = bd.Part(None)
+
+    p += make_bottom_housing(g_spec)
+
+    cell_center_x = (
+        -g_spec.cell_pitch_x / 2 if g_spec.cell_count_x % 2 == 0 else 0
+    )
+
+    # Place the Z=0 hole at the top of the housing, thus making the dot "up".
+    p += make_dot(g_spec).translate(
+        (
+            cell_center_x + g_spec.dot_pitch_x / -2,
+            0,
+            g_spec.bottom_housing_thickness,
+        )
+    )
+
+    # Place the Z=1 hole at the top of the housing, thus making the dot "down".
+    p += make_dot(g_spec).translate(
+        (
+            cell_center_x + g_spec.dot_pitch_x / 2,
+            0,
+            g_spec.bottom_housing_thickness - g_spec.dot_travel_distance,
+        )
+    )
+
+    return p
+
+
 if __name__ == "__main__":
     parts = {
         "bottom_housing": show(make_bottom_housing(GeneralSpec())),
         "dot": show(make_dot(GeneralSpec())),
+        "assembly": show(make_assembly(GeneralSpec())),
     }
 
     logger.info("Showing CAD model(s)")
