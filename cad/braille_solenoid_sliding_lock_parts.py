@@ -52,13 +52,9 @@ class GeneralSpec:
     mounting_hole_peg_diameter: float = 1.8
     mounting_hole_peg_length: float = 1.5
 
-    # TODO(KilowattSynthesis): Make a property.
-    bottom_housing_thickness: float = 5.0
-
     # Distance the dot expects to travel.
     dot_travel_distance: float = 1.0
     dot_min_diameter: float = 1.0
-    dot_total_length: float = 5
     dot_cones_height: float = 0.4
 
     dot_magnet_diameter: float = 1.0
@@ -77,6 +73,9 @@ class GeneralSpec:
     stencil_gripper_spacing_y = 5.8
     stencil_gripped_extension_x: float = 15
 
+    solenoid_protrusion_from_pcb: float = 2
+    solenoid_clearance_diameter: float = 3
+
     def __post_init__(self) -> None:
         """Post initialization checks."""
         assert self.dot_cones_height * 2 <= self.dot_total_length
@@ -88,8 +87,22 @@ class GeneralSpec:
 
         info = {
             "mounting_hole_spacing_x": self.mounting_hole_spacing_x,
+            "bottom_housing_thickness": self.bottom_housing_thickness,
+            "dot_total_length": self.dot_total_length,
         }
         logger.success(info)
+
+    @property
+    def dot_total_length(self) -> float:
+        """Total length of the braille dot."""
+        # Bottom to top.
+        return (
+            self.dot_magnet_height
+            + self.dot_magnet_top_dist_below_z0
+            + self.dot_travel_distance
+            + self.dot_cones_height
+            + self.dot_ui_length
+        )
 
     @property
     def total_housing_x(self) -> float:
@@ -104,6 +117,16 @@ class GeneralSpec:
     def total_housing_y(self) -> float:
         """Total height of the braille housing."""
         return self.dot_pitch_y * (3 - 1) + self.border_y * 2
+
+    @property
+    def bottom_housing_thickness(self) -> float:
+        """Thickness of the bottom housing."""
+        return (
+            self.solenoid_protrusion_from_pcb
+            + self.dot_total_length
+            - self.dot_ui_length
+            - self.dot_cones_height
+        )
 
     @property
     def top_housing_thickness(self) -> float:
@@ -174,9 +197,17 @@ def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
                 center=cell_y,
             ),
         ):
+            # Remove the braille dot.
             p -= bd.Cylinder(
                 radius=g_spec.dot_hole_diameter / 2,
                 height=g_spec.total_housing_z,
+                align=bde.align.ANCHOR_BOTTOM,
+            ).translate((dot_x, dot_y, 0))
+
+            # Remove the solenoid.
+            p -= bd.Cylinder(
+                radius=g_spec.solenoid_clearance_diameter / 2,
+                height=g_spec.solenoid_protrusion_from_pcb,
                 align=bde.align.ANCHOR_BOTTOM,
             ).translate((dot_x, dot_y, 0))
 
@@ -423,6 +454,10 @@ def make_dot(g_spec: GeneralSpec) -> bd.Part:
         radius=g_spec.dot_ui_round_radius,
         edge_list=bde.top_face_of(ui_top).edges(),
     ).translate((0, 0, g_spec.dot_travel_distance + g_spec.dot_cones_height))
+
+    assert g_spec.dot_total_length == (
+        bde.top_face_of(p).center().Z - bde.bottom_face_of(p).center().Z
+    )
 
     return p
 
