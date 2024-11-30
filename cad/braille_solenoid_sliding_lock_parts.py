@@ -68,13 +68,22 @@ class GeneralSpec:
     dot_ui_round_radius: float = 0.6
 
     stencil_thickness: float = 0.25  # Actually 0.15, but leave some space.
-    border_around_stencil: float = 2  # Contact between top and bottom housing.
+    # Contact between top and bottom housing.
+    border_around_stencil_x: float = 1.6
+    border_around_stencil_y: float = 2
     stencil_gripper_width_y = 3
     stencil_gripper_spacing_y = 5.8
     stencil_gripped_extension_x: float = 15
 
     solenoid_protrusion_from_pcb: float = 2
     solenoid_clearance_diameter: float = 3
+
+    # Pegs from the top housing to the bottom housing.
+    top_to_bottom_pegs_diameter: float = 1.5
+    top_to_bottom_pegs_diameter_id: float = 1.7
+    top_to_bottom_pegs_length: float = 2  # Must go through stencil.
+    top_to_bottom_pegs_border_x: float = 4.5
+    top_to_bottom_pegs_border_y: float = 4
 
     def __post_init__(self) -> None:
         """Post initialization checks."""
@@ -84,6 +93,9 @@ class GeneralSpec:
             self.stencil_gripper_spacing_y - self.stencil_gripper_width_y
         )
         assert stencil_gripper_gap_width > self.mounting_hole_diameter
+
+        assert self.top_to_bottom_pegs_border_x > self.border_around_stencil_x
+        assert self.top_to_bottom_pegs_border_y > self.border_around_stencil_y
 
         info = {
             "mounting_hole_spacing_x": self.mounting_hole_spacing_x,
@@ -244,11 +256,11 @@ def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
     p -= bd.Box(
         (
             g_spec.total_housing_x
-            - 2 * g_spec.border_around_stencil
+            - 2 * g_spec.border_around_stencil_x
             + g_spec.stencil_travel_distance
             + 0.2  # Just a bit extra to let it shift as necessary.
         ),
-        g_spec.total_housing_y - 2 * g_spec.border_around_stencil,
+        g_spec.total_housing_y - 2 * g_spec.border_around_stencil_y,
         g_spec.stencil_thickness,
         align=bde.align.ANCHOR_BOTTOM,
     ).translate((0, 0, g_spec.bottom_housing_thickness))
@@ -285,6 +297,29 @@ def make_bottom_housing(g_spec: GeneralSpec) -> bd.Part:
         align=bde.align.ANCHOR_BOTTOM,
     ).translate((0, 0, g_spec.bottom_housing_thickness))
 
+    # Remove `top_to_bottom_pegs` holes.
+    for x_side, y_side in product([-1, 1], [-1, 1]):
+        p -= bd.Cylinder(
+            radius=g_spec.top_to_bottom_pegs_diameter_id / 2,
+            # Technically could be a bit shorter (could subtract the stencil).
+            height=g_spec.top_to_bottom_pegs_length,
+            align=bde.align.ANCHOR_TOP,
+        ).translate(
+            (
+                x_side
+                * (
+                    g_spec.total_housing_x / 2
+                    - g_spec.top_to_bottom_pegs_border_x
+                ),
+                y_side
+                * (
+                    g_spec.total_housing_y / 2
+                    - g_spec.top_to_bottom_pegs_border_y
+                ),
+                g_spec.bottom_housing_thickness,
+            )
+        )
+
     return p
 
 
@@ -300,6 +335,30 @@ def make_top_housing(g_spec: GeneralSpec) -> bd.Part:
         align=bde.align.ANCHOR_TOP,
     ).translate((0, 0, g_spec.bottom_housing_thickness))
 
+    # Add `top_to_bottom_pegs` pegs.
+    for x_side, y_side in product([-1, 1], [-1, 1]):
+        p += bd.Cylinder(
+            radius=g_spec.top_to_bottom_pegs_diameter / 2,
+            height=(
+                g_spec.top_to_bottom_pegs_length + g_spec.top_housing_thickness
+            ),
+            align=bde.align.ANCHOR_TOP,
+        ).translate(
+            (
+                x_side
+                * (
+                    g_spec.total_housing_x / 2
+                    - g_spec.top_to_bottom_pegs_border_x
+                ),
+                y_side
+                * (
+                    g_spec.total_housing_y / 2
+                    - g_spec.top_to_bottom_pegs_border_y
+                ),
+                g_spec.total_housing_z,
+            )
+        )
+
     return p
 
 
@@ -307,8 +366,8 @@ def make_stencil_2d(g_spec: GeneralSpec) -> bd.Shape:
     """Make a 2d version of the stencil."""
     # Add the stencil body.
     p = bd.Rectangle(
-        g_spec.total_housing_x - 2 * g_spec.border_around_stencil - 0.2,
-        g_spec.total_housing_y - 2 * g_spec.border_around_stencil - 0.2,
+        g_spec.total_housing_x - 2 * g_spec.border_around_stencil_x - 0.2,
+        g_spec.total_housing_y - 2 * g_spec.border_around_stencil_y - 0.2,
     )
 
     # Add the stencil grippers.
@@ -352,18 +411,34 @@ def make_stencil_2d(g_spec: GeneralSpec) -> bd.Shape:
                 .edges()
             ).translate((dot_x, dot_y))
 
-    # Remove the mounting screws.
+    # Remove the mounting screw slots.
     for x_val in evenly_space_with_center(
         count=2, spacing=g_spec.mounting_hole_spacing_x
     ):
-        p -= bd.make_hull(
-            bd.Circle(g_spec.mounting_hole_diameter / 2)
-            .translate((-g_spec.stencil_travel_distance / 2, 0))
-            .edges()
-            + bd.Circle(g_spec.mounting_hole_diameter / 2)
-            .translate((g_spec.stencil_travel_distance / 2, 0))
-            .edges(),
+        p -= bd.SlotCenterToCenter(
+            center_separation=g_spec.stencil_travel_distance,
+            height=g_spec.mounting_hole_diameter,
         ).translate((x_val, 0))
+
+    # Remove the `top_to_bottom_pegs` slots.
+    for x_side, y_side in product([-1, 1], [-1, 1]):
+        p -= bd.SlotCenterToCenter(
+            center_separation=g_spec.stencil_travel_distance,
+            height=g_spec.top_to_bottom_pegs_diameter_id,
+        ).translate(
+            (
+                x_side
+                * (
+                    g_spec.total_housing_x / 2
+                    - g_spec.top_to_bottom_pegs_border_x
+                ),
+                y_side
+                * (
+                    g_spec.total_housing_y / 2
+                    - g_spec.top_to_bottom_pegs_border_y
+                ),
+            )
+        )
 
     return p
 
