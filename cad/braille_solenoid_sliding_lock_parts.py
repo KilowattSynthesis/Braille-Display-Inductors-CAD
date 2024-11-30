@@ -202,28 +202,33 @@ def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
         ),
     ):
         for dot_x, dot_y in product(
-            evenly_space_with_center(
-                count=2,
-                spacing=g_spec.dot_pitch_x,
-                center=cell_x,
-            ),
+            [
+                *evenly_space_with_center(
+                    count=2, spacing=g_spec.dot_pitch_x, center=cell_x
+                ),
+                cell_x,  # Center dot to remove icky bits.
+            ],
             evenly_space_with_center(
                 count=3,
                 spacing=g_spec.dot_pitch_y,
                 center=cell_y,
             ),
         ):
-            # Remove the braille dot.
-            p -= bd.Cylinder(
-                radius=g_spec.dot_hole_diameter / 2,
-                height=g_spec.total_housing_z,
-                align=bde.align.ANCHOR_BOTTOM,
-            ).translate((dot_x, dot_y, 0))
-
             # Remove the solenoid.
             p -= bd.Cylinder(
                 radius=g_spec.solenoid_clearance_diameter / 2,
                 height=g_spec.solenoid_protrusion_from_pcb,
+                align=bde.align.ANCHOR_BOTTOM,
+            ).translate((dot_x, dot_y, 0))
+
+            # Skip the actual dot for this one.
+            if dot_x == cell_x:
+                continue
+
+            # Remove the braille dot.
+            p -= bd.Cylinder(
+                radius=g_spec.dot_hole_diameter / 2,
+                height=g_spec.total_housing_z,
                 align=bde.align.ANCHOR_BOTTOM,
             ).translate((dot_x, dot_y, 0))
 
@@ -685,7 +690,34 @@ if __name__ == "__main__":
         "full_housing": (make_full_housing(GeneralSpec())),
         "dot": (make_dot(GeneralSpec())),
         "bottom_housing": (make_bottom_housing(GeneralSpec())),
+        "bottom_housing_0.3mm_solenoid": (
+            make_bottom_housing(GeneralSpec(solenoid_protrusion_from_pcb=0.3))
+        ),
+        "bottom_housing_1mm_solenoid": (
+            make_bottom_housing(GeneralSpec(solenoid_protrusion_from_pcb=1))
+        ),
+        "bottom_housing_3mm_solenoid": (
+            make_bottom_housing(GeneralSpec(solenoid_protrusion_from_pcb=3))
+        ),
+        "bottom_housing_8mm_solenoid": (
+            make_bottom_housing(GeneralSpec(solenoid_protrusion_from_pcb=8))
+        ),
+        "bottom_housing_12mm_solenoid": (
+            make_bottom_housing(GeneralSpec(solenoid_protrusion_from_pcb=12))
+        ),
         "top_housing": (make_top_housing(GeneralSpec())),
+        "top_housing_0.25mm_stencil": (
+            make_top_housing(GeneralSpec(stencil_thickness=0.25))
+        ),
+        "top_housing_0.4mm_stencil": (
+            make_top_housing(GeneralSpec(stencil_thickness=0.4))
+        ),
+        "top_housing_0.6mm_stencil": (
+            make_top_housing(GeneralSpec(stencil_thickness=0.6))
+        ),
+        "top_housing_1mm_stencil": (
+            make_top_housing(GeneralSpec(stencil_thickness=1))
+        ),
         "assembly": (make_assembly(GeneralSpec())),
         "stencil_2d": (make_stencil_2d(GeneralSpec())),
         "stencil_2d_outline": (
