@@ -1,0 +1,114 @@
+(footprint "Pad_Tapered_d1_1.7mm_d2_1mm_dist_1mm"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 11.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "3d9009a9-b2af-4014-af6d-497951c6039c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "Pad_Tapered_d1_1.7mm_d2_1mm_dist_1mm"
+		(at 0 13 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "ea84f40b-5459-4d16-b1a6-533338c4eb73")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 12 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dda9ca12-ccfe-4fed-8405-d786eaf2df49")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 12 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "73c2537b-223d-4d23-b4a6-52719b02fe68")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 12 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dedebbb2-9e84-4ac4-845d-c94e361aa61e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_text user "${REFERENCE}"
+		(at 0 14.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "4f41ec2a-ab29-4a8c-8af1-74c985bea189")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd circle
+		(at -0.5 0)
+		(size 1.7 1.7)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "c39e84d4-f14e-4253-bcbb-7a83238cf5f8")
+	)
+	(pad "1" smd custom
+		(at 0 0)
+		(size 1 1)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy 0.5 -0.5) (xy -0.5 -0.85) (xy -0.5 0.85) (xy 0.5 0.5)
+				)
+				(width 0.01)
+				(fill yes)
+			)
+		)
+		(uuid "75ccfe8a-b18e-4893-9e1f-7edfc1820ddb")
+	)
+	(pad "1" smd circle
+		(at 0.5 0)
+		(size 1 1)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "105b404e-d255-4b78-a5ab-21a1f8072ac2")
+	)
+)

@@ -600,7 +600,7 @@ def make_dot_cluster(g_spec: GeneralSpec) -> bd.Part:
                 interface_height,
                 align=bde.align.ANCHOR_BOTTOM,
             )
-            .rotate(axis=bd.Axis.Z, angle=35)
+            .rotate(axis=bd.Axis.Z, angle=45)
             .translate((dot_x, dot_y, 0))
         )
 
@@ -688,6 +688,11 @@ if __name__ == "__main__":
         "top_housing": (make_top_housing(GeneralSpec())),
         "assembly": (make_assembly(GeneralSpec())),
         "stencil_2d": (make_stencil_2d(GeneralSpec())),
+        "stencil_2d_outline": (
+            make_stencil_2d(
+                GeneralSpec(), show_dot_holes=False, show_slot_holes=False
+            )
+        ),
         "stencil_3d": (make_stencil_3d(GeneralSpec())),
         "many_assemblies": (make_many_assemblies(GeneralSpec())),
     }
@@ -703,7 +708,7 @@ if __name__ == "__main__":
         if isinstance(part, bd.Part | bd.Solid | bd.Compound):
             bd.export_stl(part, str(export_folder / f"{name}.stl"))
             bd.export_step(part, str(export_folder / f"{name}.step"))
-        elif isinstance(part, bd.Shape):
+        if "2d" in name:
             # Export SVG.
             svg = bd.ExportSVG(unit=bd.Unit.MM, line_weight=0.1)
             svg.add_layer(
@@ -723,6 +728,10 @@ if __name__ == "__main__":
             )
             dxf.add_shape(part, layer="default")
             dxf.write(export_folder / f"{name}.dxf")
-        else:
-            msg = f"Unknown type for {name}"
-            raise NotImplementedError(msg)
+
+    logger.success("Saved CAD model(s)")
+
+    data = {
+        "stencil_box": parts["stencil_2d_outline"].bounding_box(),
+    }
+    logger.success(f"General data: {data}")
