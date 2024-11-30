@@ -1,0 +1,103 @@
+(footprint "Pad_Corner_3x3mm_1mm_Chamfer"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 8.2 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "0eabce66-23fe-4aff-8e6a-fc50f738118e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "Pad_Corner_3x3mm_1mm_Chamfer"
+		(at 0 9.7 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "ba441968-ab9f-42d5-93b3-60515f7832bd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 8.7 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "33793b6f-b0b0-46c8-b366-aafdf988f866")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 8.7 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2f62ceef-0430-46de-bbbf-91f2d499c7bb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 8.7 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3e82ad21-d1a9-4c85-8941-dae7f8dcb62e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_text user "${REFERENCE}"
+		(at 0 11.2 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "7e068aa9-2207-44e7-b828-ebe49093360b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd custom
+		(at 1 -1)
+		(size 1 1)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(thermal_bridge_angle 45)
+		(options
+			(clearance outline)
+			(anchor rect)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy -3.5 1) (xy -3.5 -1) (xy 1 -1) (xy 1 3.5) (xy -1 3.5) (xy -1 1.6) (xy -1.6 1)
+				)
+				(width 0.05)
+				(fill yes)
+			)
+		)
+		(uuid "0bf6c378-66b1-4268-bdd5-08eafad817d6")
+	)
+)
