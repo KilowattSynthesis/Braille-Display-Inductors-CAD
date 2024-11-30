@@ -48,7 +48,7 @@ class GeneralSpec:
 
     mounting_hole_spacing_y: float = 3
     mounting_hole_diameter: float = 2.0
-    mounting_hole_head_diameter: float = 4.0
+    housing_x_size_past_mounting_hole_center: float = 2.5
     mounting_hole_peg_diameter: float = 1.8
     mounting_hole_peg_length: float = 1.5
 
@@ -101,6 +101,9 @@ class GeneralSpec:
             "mounting_hole_spacing_x": self.mounting_hole_spacing_x,
             "bottom_housing_thickness": self.bottom_housing_thickness,
             "dot_total_length": self.dot_total_length,
+            "total_housing_x": self.total_housing_x,
+            "total_housing_y": self.total_housing_y,
+            "total_housing_z": self.total_housing_z,
         }
         logger.success(info)
 
@@ -122,7 +125,7 @@ class GeneralSpec:
         return (
             self.cell_pitch_x * (self.cell_count_x)
             + 2 * self.x_dist_to_mounting_holes
-            + self.mounting_hole_head_diameter
+            + 2 * self.housing_x_size_past_mounting_hole_center
         )
 
     @property
@@ -623,17 +626,35 @@ if __name__ == "__main__":
 
     logger.info("Saving CAD model(s)")
 
-    (export_folder := Path(__file__).parent.with_name("build")).mkdir(
-        exist_ok=True
-    )
+    (
+        export_folder := Path(__file__).parent.parent
+        / "build"
+        / Path(__file__).stem
+    ).mkdir(exist_ok=True, parents=True)
     for name, part in parts.items():
         if isinstance(part, bd.Part | bd.Solid | bd.Compound):
             bd.export_stl(part, str(export_folder / f"{name}.stl"))
             bd.export_step(part, str(export_folder / f"{name}.step"))
         elif isinstance(part, bd.Shape):
-            # bd.export_svg(part, str(export_folder / f"{name}.svg"))
-            pass
-            # TODO(KilowattSynthesis): Export SVG.
+            # Export SVG.
+            svg = bd.ExportSVG(unit=bd.Unit.MM, line_weight=0.1)
+            svg.add_layer(
+                "default",
+                fill_color=bd.ColorIndex.RED,
+                line_color=bd.ColorIndex.BLACK,
+            )
+            svg.add_shape(part, layer="default")
+            svg.write(export_folder / f"{name}.svg")
+
+            # Export DXF.
+            dxf = bd.ExportDXF(unit=bd.Unit.MM, line_weight=0.1)
+            dxf.add_layer(
+                "default",
+                color=bd.ColorIndex.RED,
+                line_type=bd.LineType.CONTINUOUS,
+            )
+            dxf.add_shape(part, layer="default")
+            dxf.write(export_folder / f"{name}.dxf")
         else:
             msg = f"Unknown type for {name}"
             raise NotImplementedError(msg)
