@@ -63,8 +63,8 @@ class GeneralSpec:
     # Distance from the top of the magnet to the Z=0 plane.
     dot_magnet_top_dist_below_z0: float = 0.4  # Start around bottom of cone.
 
-    # TODO(KilowattSynthesis): Check or set dynamically.
-    dot_ui_length: float = 1.0
+    # Must be equal to the `dot_travel_distance`, it seems.
+    dot_ui_length: float = 1
     dot_ui_round_radius: float = 0.6
 
     stencil_thickness: float = 0.25  # Actually 0.15, but leave some space.
@@ -99,6 +99,7 @@ class GeneralSpec:
 
         info = {
             "mounting_hole_spacing_x": self.mounting_hole_spacing_x,
+            "top_housing_thickness": self.top_housing_thickness,
             "bottom_housing_thickness": self.bottom_housing_thickness,
             "dot_total_length": self.dot_total_length,
             "total_housing_x": self.total_housing_x,
@@ -126,6 +127,7 @@ class GeneralSpec:
             self.cell_pitch_x * (self.cell_count_x)
             + 2 * self.x_dist_to_mounting_holes
             + 2 * self.housing_x_size_past_mounting_hole_center
+            + self.stencil_travel_distance  # For stencil border sizing.
         )
 
     @property
@@ -189,7 +191,6 @@ def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
     )
 
     # Remove the braille dots.
-    # TODO(KilowattSynthesis): Do better.
     for cell_x, cell_y in product(
         evenly_space_with_center(
             count=g_spec.cell_count_x,
@@ -365,7 +366,12 @@ def make_top_housing(g_spec: GeneralSpec) -> bd.Part:
     return p
 
 
-def make_stencil_2d(g_spec: GeneralSpec) -> bd.Shape:
+def make_stencil_2d(
+    g_spec: GeneralSpec,
+    *,
+    show_dot_holes: bool = True,
+    show_slot_holes: bool = True,
+) -> bd.Shape:
     """Make a 2d version of the stencil."""
     # Add the stencil body.
     p = bd.Rectangle(
@@ -373,7 +379,7 @@ def make_stencil_2d(g_spec: GeneralSpec) -> bd.Shape:
         g_spec.total_housing_y - 2 * g_spec.border_around_stencil_y - 0.2,
     )
 
-    # Add the stencil grippers.
+    # Add the stencil grippers (long, to the sides).
     for y_val in evenly_space_with_center(
         count=2, spacing=g_spec.stencil_gripper_spacing_y
     ):
@@ -405,6 +411,8 @@ def make_stencil_2d(g_spec: GeneralSpec) -> bd.Shape:
                 center=cell_y,
             ),
         ):
+            if not show_dot_holes:
+                continue
             p -= bd.make_hull(
                 bd.Circle(g_spec.dot_hole_diameter / 2)
                 .translate((-g_spec.stencil_travel_distance / 2, 0))
@@ -418,6 +426,9 @@ def make_stencil_2d(g_spec: GeneralSpec) -> bd.Shape:
     for x_val in evenly_space_with_center(
         count=2, spacing=g_spec.mounting_hole_spacing_x
     ):
+        if not show_slot_holes:
+            continue
+
         p -= bd.SlotCenterToCenter(
             center_separation=g_spec.stencil_travel_distance,
             height=g_spec.mounting_hole_diameter,
@@ -425,6 +436,9 @@ def make_stencil_2d(g_spec: GeneralSpec) -> bd.Shape:
 
     # Remove the `top_to_bottom_pegs` slots.
     for x_side, y_side in product([-1, 1], [-1, 1]):
+        if not show_slot_holes:
+            continue
+
         p -= bd.SlotCenterToCenter(
             center_separation=g_spec.stencil_travel_distance,
             height=g_spec.top_to_bottom_pegs_diameter_id,
@@ -540,6 +554,59 @@ def make_dot(g_spec: GeneralSpec) -> bd.Part:
     return p
 
 
+def make_dot_cluster(g_spec: GeneralSpec) -> bd.Part:
+    """Create a CAD model of many printable dots."""
+    p = bd.Part(None)
+    dot = make_dot(g_spec)
+
+    x_count = 3
+    y_count = 3
+    x_spacing = 3
+    y_spacing = 3
+
+    interface_height = 1
+
+    # Add base
+    p += bd.Box(
+        x_count * x_spacing,
+        y_count * y_spacing,
+        2,
+        align=bde.align.ANCHOR_TOP,
+    )
+
+    for dot_x, dot_y in product(
+        evenly_space_with_center(
+            count=x_count,
+            spacing=x_spacing,
+        ),
+        evenly_space_with_center(
+            count=y_count,
+            spacing=y_spacing,
+        ),
+    ):
+        p += dot.translate(
+            (
+                dot_x,
+                dot_y,
+                -dot.bounding_box().min.Z + interface_height,
+            )
+        )
+
+        # Add the interface cone.
+        p += (
+            bd.Box(
+                g_spec.dot_diameter - 0.5,
+                min(x_spacing, y_spacing),
+                interface_height,
+                align=bde.align.ANCHOR_BOTTOM,
+            )
+            .rotate(axis=bd.Axis.Z, angle=35)
+            .translate((dot_x, dot_y, 0))
+        )
+
+    return p
+
+
 def make_assembly(
     g_spec: GeneralSpec,
     stencil_shift: Literal[0, -1, 1] = 0,
@@ -614,14 +681,15 @@ def make_many_assemblies(g_spec: GeneralSpec) -> bd.Part:
 
 if __name__ == "__main__":
     parts = {
+        "dot_cluster": show(make_dot_cluster(GeneralSpec())),
         "full_housing": (make_full_housing(GeneralSpec())),
         "dot": (make_dot(GeneralSpec())),
         "bottom_housing": (make_bottom_housing(GeneralSpec())),
         "top_housing": (make_top_housing(GeneralSpec())),
-        "assembly": show(make_assembly(GeneralSpec())),
+        "assembly": (make_assembly(GeneralSpec())),
         "stencil_2d": (make_stencil_2d(GeneralSpec())),
         "stencil_3d": (make_stencil_3d(GeneralSpec())),
-        "many_assemblies": show(make_many_assemblies(GeneralSpec())),
+        "many_assemblies": (make_many_assemblies(GeneralSpec())),
     }
 
     logger.info("Saving CAD model(s)")
