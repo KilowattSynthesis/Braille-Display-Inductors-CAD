@@ -11,7 +11,7 @@ mechanism.
 Stackup:
     1. PCB + Solenoids
     2. Housing Bottom
-    3. Metal Sheet
+    3. Metal Sheet(s)
     4. Housing Top
     5. Dots [not really part of the stackup]
 """
@@ -127,7 +127,7 @@ class GeneralSpec:
             self.cell_pitch_x * (self.cell_count_x)
             + 2 * self.x_dist_to_mounting_holes
             + 2 * self.housing_x_size_past_mounting_hole_center
-            + self.stencil_travel_distance  # For stencil border sizing.
+            + 2 * self.stencil_travel_distance  # For stencil border sizing.
         )
 
     @property
@@ -163,11 +163,14 @@ class GeneralSpec:
 
     @property
     def stencil_travel_distance(self) -> float:
-        """Travel distance of the stencil.
+        """Travel distance of the stencil, in each direction.
 
-        The stencil must travel the large radius, plus the small radius.
+        Total travel is `2 * this value`.
+
+        The stencil must travel so that the hole in the middle can be in the
+        place of each dot.
         """
-        return self.dot_min_diameter / 2 + self.dot_diameter / 2
+        return self.dot_pitch_x / 2
 
     @property
     def mounting_hole_spacing_x(self) -> float:
@@ -266,7 +269,7 @@ def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
         (
             g_spec.total_housing_x
             - 2 * g_spec.border_around_stencil_x
-            + g_spec.stencil_travel_distance
+            + 2 * g_spec.stencil_travel_distance
             + 0.2  # Just a bit extra to let it shift as necessary.
         ),
         g_spec.total_housing_y - 2 * g_spec.border_around_stencil_y,
@@ -393,7 +396,7 @@ def make_stencil_2d(
             g_spec.stencil_gripper_width_y - 0.2,
         ).translate((0, y_val))
 
-    # Remove the holes. Each hole is a hull between the big and small circles.
+    # Remove the holes. Each hole is a slot.
     for cell_x, cell_y in product(
         evenly_space_with_center(
             count=g_spec.cell_count_x,
@@ -404,28 +407,28 @@ def make_stencil_2d(
             spacing=g_spec.dot_pitch_y,
         ),
     ):
-        for dot_x, dot_y in product(
-            evenly_space_with_center(
-                count=2,
-                spacing=g_spec.dot_pitch_x,
-                center=cell_x,
-            ),
-            evenly_space_with_center(
-                count=3,
-                spacing=g_spec.dot_pitch_y,
-                center=cell_y,
-            ),
+        if not show_dot_holes:
+            continue
+
+        for dot_y in evenly_space_with_center(
+            count=3,
+            spacing=g_spec.dot_pitch_y,
+            center=cell_y,
         ):
-            if not show_dot_holes:
-                continue
-            p -= bd.make_hull(
-                bd.Circle(g_spec.dot_hole_diameter / 2)
-                .translate((-g_spec.stencil_travel_distance / 2, 0))
-                .edges()
-                + bd.Circle(g_spec.dot_min_diameter / 2)
-                .translate((g_spec.stencil_travel_distance / 2, 0))
-                .edges()
-            ).translate((dot_x, dot_y))
+            # Slot for the dots.
+            p -= bd.SlotCenterToCenter(
+                center_separation=(
+                    2 * g_spec.stencil_travel_distance
+                    + g_spec.dot_pitch_x
+                    + 0.65  # Add extra to merge the slots.
+                ),
+                height=g_spec.dot_min_diameter,
+            ).translate((cell_x, dot_y))
+
+            # Remove the center hole to let the dots pass.
+            p -= bd.Circle(g_spec.dot_hole_diameter / 2).translate(
+                (cell_x, dot_y)
+            )
 
     # Remove the mounting screw slots.
     for x_val in evenly_space_with_center(
@@ -435,7 +438,7 @@ def make_stencil_2d(
             continue
 
         p -= bd.SlotCenterToCenter(
-            center_separation=g_spec.stencil_travel_distance,
+            center_separation=g_spec.stencil_travel_distance * 2,
             height=g_spec.mounting_hole_diameter,
         ).translate((x_val, 0))
 
@@ -445,7 +448,7 @@ def make_stencil_2d(
             continue
 
         p -= bd.SlotCenterToCenter(
-            center_separation=g_spec.stencil_travel_distance,
+            center_separation=g_spec.stencil_travel_distance * 2,
             height=g_spec.top_to_bottom_pegs_diameter_id,
         ).translate(
             (
@@ -658,7 +661,7 @@ def make_assembly(
         amount=g_spec.stencil_thickness,
     ).translate(
         (
-            g_spec.stencil_travel_distance / 2 * stencil_shift,
+            g_spec.stencil_travel_distance * stencil_shift,
             0,
             g_spec.bottom_housing_thickness,
         )
@@ -674,11 +677,13 @@ def make_many_assemblies(g_spec: GeneralSpec) -> bd.Part:
     for housing_select, z_val in zip(
         ("top", "bottom"), (0, g_spec.total_housing_z + 5), strict=True
     ):
-        for stencil_shift in (-1, 1):
+        for stencil_shift in (-1, 0, 1):
             p += make_assembly(
-                g_spec, stencil_shift, housing_select=housing_select
+                g_spec,
+                stencil_shift=stencil_shift,
+                housing_select=housing_select,
             ).translate(
-                (0, stencil_shift / 2 * (g_spec.total_housing_y + 3.5), z_val)
+                (0, stencil_shift * (g_spec.total_housing_y + 3.5), z_val)
             )
 
     return p
@@ -686,8 +691,10 @@ def make_many_assemblies(g_spec: GeneralSpec) -> bd.Part:
 
 if __name__ == "__main__":
     parts = {
-        "dot_cluster": show(make_dot_cluster(GeneralSpec())),
+        "dot_cluster": (make_dot_cluster(GeneralSpec())),
+        "many_assemblies": show(make_many_assemblies(GeneralSpec())),
         "full_housing": (make_full_housing(GeneralSpec())),
+        "assembly": (make_assembly(GeneralSpec())),
         "dot": (make_dot(GeneralSpec())),
         "bottom_housing": (make_bottom_housing(GeneralSpec())),
         "bottom_housing_0.3mm_solenoid": (
@@ -718,7 +725,6 @@ if __name__ == "__main__":
         "top_housing_1mm_stencil": (
             make_top_housing(GeneralSpec(stencil_thickness=1))
         ),
-        "assembly": (make_assembly(GeneralSpec())),
         "stencil_2d": (make_stencil_2d(GeneralSpec())),
         "stencil_2d_outline": (
             make_stencil_2d(
@@ -726,7 +732,6 @@ if __name__ == "__main__":
             )
         ),
         "stencil_3d": (make_stencil_3d(GeneralSpec())),
-        "many_assemblies": (make_many_assemblies(GeneralSpec())),
     }
 
     logger.info("Saving CAD model(s)")
