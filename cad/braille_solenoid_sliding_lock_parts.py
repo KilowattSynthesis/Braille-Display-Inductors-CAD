@@ -42,13 +42,12 @@ class GeneralSpec:
     cell_count_y = 1
 
     # Distance from outer dots to mounting holes.
-    x_dist_to_mounting_holes: float = 5.0
+    x_dist_dots_to_mounting_holes: float = 5.0
 
     border_y: float = 4.0
 
     mounting_hole_spacing_y: float = 3
     mounting_hole_diameter: float = 2.0
-    housing_x_size_past_mounting_hole_center: float = 2.5
     mounting_hole_peg_diameter: float = 1.8
     mounting_hole_peg_length: float = 1.5
 
@@ -69,7 +68,7 @@ class GeneralSpec:
 
     stencil_thickness: float = 0.25  # Actually 0.15, but leave some space.
     # Contact between top and bottom housing.
-    border_around_stencil_x: float = 1.6
+    border_around_stencil_x: float = 2
     border_around_stencil_y: float = 2
     stencil_gripper_width_y = 3
     stencil_gripper_spacing_y = 5.8
@@ -82,7 +81,8 @@ class GeneralSpec:
     top_to_bottom_pegs_diameter: float = 1.5
     top_to_bottom_pegs_diameter_id: float = 1.7
     top_to_bottom_pegs_length: float = 2  # Must go through stencil.
-    top_to_bottom_pegs_border_x: float = 4.5
+    # Distance from mounting holes to pegs. Positive is toward outside.
+    top_to_bottom_pegs_offset_from_mounting_holes_x: float = 0.4
     top_to_bottom_pegs_border_y: float = 4
 
     def __post_init__(self) -> None:
@@ -94,8 +94,8 @@ class GeneralSpec:
         )
         assert stencil_gripper_gap_width > self.mounting_hole_diameter
 
-        assert self.top_to_bottom_pegs_border_x > self.border_around_stencil_x
         assert self.top_to_bottom_pegs_border_y > self.border_around_stencil_y
+        assert self.border_around_stencil_x > self.stencil_travel_distance
 
         info = {
             "mounting_hole_spacing_x": self.mounting_hole_spacing_x,
@@ -124,10 +124,18 @@ class GeneralSpec:
     def total_housing_x(self) -> float:
         """Total width of the braille housing."""
         return (
-            self.cell_pitch_x * (self.cell_count_x)
-            + 2 * self.x_dist_to_mounting_holes
-            + 2 * self.housing_x_size_past_mounting_hole_center
+            self.mounting_hole_spacing_x
+            + max(
+                # Width of the top/bottom slots.
+                2 * self.top_to_bottom_pegs_offset_from_mounting_holes_x
+                + self.top_to_bottom_pegs_diameter_id
+                + 2 * self.stencil_travel_distance,
+                # Width of the middle slots.
+                self.mounting_hole_diameter + 2 * self.stencil_travel_distance,
+            )
+            + 2 * self.border_around_stencil_x
             + 2 * self.stencil_travel_distance  # For stencil border sizing.
+            + 2 * 1.0  # Add a bit past the widest slot.
         )
 
     @property
@@ -176,7 +184,7 @@ class GeneralSpec:
     def mounting_hole_spacing_x(self) -> float:
         """Spacing between the mounting holes, in X axis."""
         return (
-            self.x_dist_to_mounting_holes * 2
+            self.x_dist_dots_to_mounting_holes * 2
             + self.cell_pitch_x * (self.cell_count_x - 1)
             + self.dot_pitch_x
         )
@@ -264,12 +272,12 @@ def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
             )
         )
 
-    # Remove the stencil body.
+    # Remove the stencil body (from what becomes the top housing).
     p -= bd.Box(
         (
             g_spec.total_housing_x
             - 2 * g_spec.border_around_stencil_x
-            + 2 * g_spec.stencil_travel_distance
+            # - 2 * g_spec.stencil_travel_distance
             + 0.2  # Just a bit extra to let it shift as necessary.
         ),
         g_spec.total_housing_y - 2 * g_spec.border_around_stencil_y,
@@ -320,8 +328,8 @@ def make_bottom_housing(g_spec: GeneralSpec) -> bd.Part:
             (
                 x_side
                 * (
-                    g_spec.total_housing_x / 2
-                    - g_spec.top_to_bottom_pegs_border_x
+                    g_spec.mounting_hole_spacing_x / 2
+                    + g_spec.top_to_bottom_pegs_offset_from_mounting_holes_x
                 ),
                 y_side
                 * (
@@ -359,8 +367,8 @@ def make_top_housing(g_spec: GeneralSpec) -> bd.Part:
             (
                 x_side
                 * (
-                    g_spec.total_housing_x / 2
-                    - g_spec.top_to_bottom_pegs_border_x
+                    g_spec.mounting_hole_spacing_x / 2
+                    + g_spec.top_to_bottom_pegs_offset_from_mounting_holes_x
                 ),
                 y_side
                 * (
@@ -383,7 +391,12 @@ def make_stencil_2d(
     """Make a 2d version of the stencil."""
     # Add the stencil body.
     p = bd.Rectangle(
-        g_spec.total_housing_x - 2 * g_spec.border_around_stencil_x - 0.2,
+        (
+            g_spec.total_housing_x
+            - 2 * g_spec.border_around_stencil_x
+            - 2 * g_spec.stencil_travel_distance
+            - 0.2
+        ),
         g_spec.total_housing_y - 2 * g_spec.border_around_stencil_y - 0.2,
     )
 
@@ -454,8 +467,8 @@ def make_stencil_2d(
             (
                 x_side
                 * (
-                    g_spec.total_housing_x / 2
-                    - g_spec.top_to_bottom_pegs_border_x
+                    g_spec.mounting_hole_spacing_x / 2
+                    + g_spec.top_to_bottom_pegs_offset_from_mounting_holes_x
                 ),
                 y_side
                 * (
@@ -666,6 +679,22 @@ def make_assembly(
             g_spec.bottom_housing_thickness,
         )
     )
+
+    # Drawing where the solenoid will be.
+    if housing_select == "bottom":
+        # for x_side, y_val in product((1, -1), (1.25, 1.25 - 6)):
+        for x_side, y_val in product((1, -1), (0,)):
+            p += bd.Cylinder(
+                radius=6 / 2,
+                height=1,
+                align=bde.align.ANCHOR_TOP,
+            ).translate(
+                (
+                    x_side * g_spec.cell_pitch_x / 2,
+                    y_val,
+                    -0.5,
+                )
+            )
 
     return p
 
