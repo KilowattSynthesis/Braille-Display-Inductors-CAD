@@ -2913,6 +2913,16 @@
 		)
 		(uuid c50adb9a-8b4f-42be-b13e-b9bb718ed733)
 	)
+	(text "FIXME: Bad labelling on the braille breakout.\nTODO: Braille breakout footprint - put them on diagonals, maybe.\nTODO: Braille breakout - add mounting holes alongside\nTODO: Change all LED footprints to 0603\nTODO: Swap backside resistors for a resistor network\nTODO: Swap top-side LEDs for double-LED in single package"
+		(exclude_from_sim no)
+		(at 157.988 21.59 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "05962359-74d7-41bf-aaa8-6083120b88c4")
+	)
 	(text "Current-limiting resistors:\n  At 5V: 100mA needs 50 ohms. 250mA needs 20 ohms.\n  At 3V3: 100mA needs 33 ohms. 250mA needs 13.2 ohms.\n\n  LBR2012T470M inductor has max 75mA rating."
 		(exclude_from_sim no)
 		(at 61.468 21.336 0)
