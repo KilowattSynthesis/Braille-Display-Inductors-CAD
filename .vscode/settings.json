@@ -1,17 +1,20 @@
 {
-    "python.languageServer": "Pylance",
-    "python.analysis.typeCheckingMode": "basic",
-    "python.analysis.diagnosticSeverityOverrides": {
-        "reportMissingModuleSource": "none"
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.ruff_cache": true,
+        "venv": true,
     },
-    "python.terminal.activateEnvironment": false,
-    "micropico.syncFolder": "",
-    "micropico.openOnStart": true,
-    "python.analysis.typeshedPaths": [
-        "~/.micropico-stubs/micropython-rp2-rpi_pico-stubs==1.23.0.post2"
-    ],
-    "python.analysis.extraPaths": [
-        "~/.micropico-stubs/micropython-rp2-rpi_pico-stubs==1.23.0.post2"
-    ],
-    "cSpell.enabled": false
+
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+    },
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "python.analysis.diagnosticMode": "workspace",
+    "python.languageServer": "Pylance",
 }

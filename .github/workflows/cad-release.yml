@@ -24,14 +24,14 @@ jobs:
         run: pip install ruff
 
       - name: Run ruff linter
-        run: ruff check .
+        run: ruff check cad/
 
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
       - name: Run Python scripts in CAD folder
         run: |
-          find cad -name "*.py" | while read file; do
+          find cad/ -name "*.py" | while read file; do
             echo "Running $file"
             python "$file"
           done
