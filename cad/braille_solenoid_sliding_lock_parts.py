@@ -79,8 +79,7 @@ class GeneralSpec:
     stencil_gripper_spacing_y = 5.8
     stencil_gripped_extension_x: float = 15
 
-    solenoid_protrusion_from_pcb: float = 2
-    solenoid_clearance_diameter: float = 3
+    solenoid_protrusion_from_pcb: float = 2.0
 
     # Pegs from the top housing to the bottom housing.
     top_to_bottom_pegs_diameter: float = 1.5
@@ -204,13 +203,10 @@ def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
             count=g_spec.cell_count_y,
             spacing=g_spec.cell_pitch_y,
         ),
-        [
-            *evenly_space_with_center(
-                count=g_spec.dot_count_x,
-                spacing=g_spec.dot_pitch_x,
-            ),
-            0,  # Center dot to remove icky bits.
-        ],
+        evenly_space_with_center(
+            count=g_spec.dot_count_x,
+            spacing=g_spec.dot_pitch_x,
+        ),
         evenly_space_with_center(
             count=g_spec.dot_count_y,
             spacing=g_spec.dot_pitch_y,
@@ -219,23 +215,20 @@ def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
         dot_x = cell_x + dot_offset_x
         dot_y = cell_y + dot_offset_y
 
-        # Remove the solenoid.
-        p -= bd.Cylinder(
-            radius=g_spec.solenoid_clearance_diameter / 2,
-            height=g_spec.solenoid_protrusion_from_pcb,
-            align=bde.align.ANCHOR_BOTTOM,
-        ).translate((dot_x, dot_y, 0))
-
-        # Skip the actual dot for this one.
-        if dot_x == cell_x:
-            continue
-
         # Remove the braille dot.
         p -= bd.Cylinder(
             radius=g_spec.dot_hole_diameter / 2,
             height=g_spec.total_housing_z,
             align=bde.align.ANCHOR_BOTTOM,
         ).translate((dot_x, dot_y, 0))
+
+        # Remove space for the solenoids.
+        p -= bd.Box(
+            (g_spec.cell_pitch_x * g_spec.cell_count_x) + 2,
+            (g_spec.dot_pitch_y * (g_spec.dot_count_y)) + 2,
+            g_spec.solenoid_protrusion_from_pcb,
+            align=bde.align.ANCHOR_BOTTOM,
+        )
 
     # Remove the mounting holes.
     for x_side, y_val in product([-1, 1], [0]):
@@ -573,13 +566,17 @@ def make_dot_cluster(g_spec: GeneralSpec) -> bd.Part:
     x_spacing = 3
     y_spacing = 3
 
-    interface_height = 1
+    interface_height_z = 1
+    # interface_width = g_spec.dot_diameter - 0.5  # Small dimension.
+    interface_width = 1.5  # Small dimension of block.
+
+    bottom_box_thickness_z = 2
 
     # Add base
     p += bd.Box(
         x_count * x_spacing,
         y_count * y_spacing,
-        2,
+        bottom_box_thickness_z,
         align=bde.align.ANCHOR_TOP,
     )
 
@@ -593,20 +590,40 @@ def make_dot_cluster(g_spec: GeneralSpec) -> bd.Part:
             spacing=y_spacing,
         ),
     ):
+        # Add the dot.
         p += dot.translate(
             (
                 dot_x,
                 dot_y,
-                -dot.bounding_box().min.Z + interface_height,
+                -dot.bounding_box().min.Z + interface_height_z,
             )
         )
 
-        # Add the interface cone.
+        # Add the interface box.
         p += (
             bd.Box(
-                g_spec.dot_diameter - 0.5,
+                interface_width,
                 min(x_spacing, y_spacing),
-                interface_height,
+                interface_height_z,
+                align=bde.align.ANCHOR_BOTTOM,
+            )
+            .rotate(axis=bd.Axis.Z, angle=45)
+            .translate((dot_x, dot_y, 0))
+        )
+
+        # Remove a clearance hole for drainage.
+        p -= bd.Cylinder(
+            radius=g_spec.dot_magnet_diameter / 2,
+            height=bottom_box_thickness_z + interface_height_z,
+            align=bde.align.ANCHOR_BOTTOM,
+        ).translate((dot_x, dot_y, -bottom_box_thickness_z))
+
+        # In the interface block, make the hole a legit gap.
+        p -= (
+            bd.Box(
+                interface_width,
+                g_spec.dot_magnet_diameter,
+                interface_height_z,
                 align=bde.align.ANCHOR_BOTTOM,
             )
             .rotate(axis=bd.Axis.Z, angle=45)
@@ -702,6 +719,9 @@ if __name__ == "__main__":
         ),
         "bottom_housing_3mm_solenoid": (
             make_bottom_housing(GeneralSpec(solenoid_protrusion_from_pcb=3))
+        ),
+        "bottom_housing_6mm_solenoid": (
+            make_bottom_housing(GeneralSpec(solenoid_protrusion_from_pcb=6))
         ),
         "bottom_housing_8mm_solenoid": (
             make_bottom_housing(GeneralSpec(solenoid_protrusion_from_pcb=8))
