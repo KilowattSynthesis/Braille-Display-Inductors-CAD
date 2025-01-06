@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 3.4,
-          "width": 1.1
+          "drill": 1.0,
+          "height": 1.7,
+          "width": 1.7
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -181,7 +181,10 @@
         0.0,
         0.1,
         0.2,
-        2.0
+        0.8,
+        1.0,
+        2.0,
+        3.0
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -456,7 +459,7 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.25,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -466,14 +469,14 @@
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
+        "track_width": 0.25,
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
       },
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.25,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -483,24 +486,24 @@
         "name": "Power",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.5,
+        "track_width": 0.8,
         "via_diameter": 0.7,
         "via_drill": 0.3,
         "wire_width": 6
       },
       {
         "bus_width": 12,
-        "clearance": 0.11,
+        "clearance": 0.25,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "Tight",
+        "name": "Switched_Power",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.1,
+        "track_width": 0.8,
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
@@ -544,24 +547,40 @@
       "/Braille_Cells_and_Controls/Braille_Cell/DOT4_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell/DOT5_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell/DOT6_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell/MAG_BOTTOM_A": "Switched_Power",
+      "/Braille_Cells_and_Controls/Braille_Cell/MAG_BOTTOM_B": "Switched_Power",
+      "/Braille_Cells_and_Controls/Braille_Cell/MAG_TOP_A": "Switched_Power",
+      "/Braille_Cells_and_Controls/Braille_Cell/MAG_TOP_B": "Switched_Power",
       "/Braille_Cells_and_Controls/Braille_Cell1/DOT1_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell1/DOT2_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell1/DOT3_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell1/DOT4_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell1/DOT5_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell1/DOT6_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell1/MAG_BOTTOM_A": "Switched_Power",
+      "/Braille_Cells_and_Controls/Braille_Cell1/MAG_BOTTOM_B": "Switched_Power",
+      "/Braille_Cells_and_Controls/Braille_Cell1/MAG_TOP_A": "Switched_Power",
+      "/Braille_Cells_and_Controls/Braille_Cell1/MAG_TOP_B": "Switched_Power",
       "/Braille_Cells_and_Controls/Braille_Cell2/DOT1_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell2/DOT2_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell2/DOT3_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell2/DOT4_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell2/DOT5_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell2/DOT6_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell2/MAG_BOTTOM_A": "Switched_Power",
+      "/Braille_Cells_and_Controls/Braille_Cell2/MAG_BOTTOM_B": "Switched_Power",
+      "/Braille_Cells_and_Controls/Braille_Cell2/MAG_TOP_A": "Switched_Power",
+      "/Braille_Cells_and_Controls/Braille_Cell2/MAG_TOP_B": "Switched_Power",
       "/Braille_Cells_and_Controls/Braille_Cell3/DOT1_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell3/DOT2_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell3/DOT3_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell3/DOT4_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell3/DOT5_A": "Tight",
       "/Braille_Cells_and_Controls/Braille_Cell3/DOT6_A": "Tight",
+      "/Braille_Cells_and_Controls/Braille_Cell3/MAG_BOTTOM_A": "Switched_Power",
+      "/Braille_Cells_and_Controls/Braille_Cell3/MAG_BOTTOM_B": "Switched_Power",
+      "/Braille_Cells_and_Controls/Braille_Cell3/MAG_TOP_A": "Switched_Power",
+      "/Braille_Cells_and_Controls/Braille_Cell3/MAG_TOP_B": "Switched_Power",
       "Net-(B1-1B)": "Tight",
       "Net-(B1-2B)": "Tight",
       "Net-(B1-3B)": "Tight",
@@ -587,7 +606,7 @@
       "Net-(B4-5B)": "Tight",
       "Net-(B4-6B)": "Tight",
       "Net-(J3-Pin_1)": "Power",
-      "Net-(L1-Pad2)": "Tight",
+      "Net-(L1-Pad2)": "Switched_Power",
       "Net-(L10-Pad2)": "Tight",
       "Net-(L11-Pad2)": "Tight",
       "Net-(L12-Pad2)": "Tight",
@@ -598,7 +617,7 @@
       "Net-(L17-Pad2)": "Tight",
       "Net-(L18-Pad2)": "Tight",
       "Net-(L19-Pad2)": "Tight",
-      "Net-(L2-Pad2)": "Tight",
+      "Net-(L2-Pad2)": "Switched_Power",
       "Net-(L20-Pad2)": "Tight",
       "Net-(L21-Pad2)": "Tight",
       "Net-(L22-Pad2)": "Tight",
@@ -609,7 +628,7 @@
       "Net-(L27-Pad2)": "Tight",
       "Net-(L28-Pad2)": "Tight",
       "Net-(L29-Pad2)": "Tight",
-      "Net-(L3-Pad2)": "Tight",
+      "Net-(L3-Pad2)": "Switched_Power",
       "Net-(L30-Pad2)": "Tight",
       "Net-(L31-Pad2)": "Tight",
       "Net-(L32-Pad2)": "Tight",
@@ -617,14 +636,14 @@
       "Net-(L37-Pad2)": "Tight",
       "Net-(L38-Pad2)": "Tight",
       "Net-(L39-Pad2)": "Tight",
-      "Net-(L4-Pad2)": "Tight",
+      "Net-(L4-Pad2)": "Switched_Power",
       "Net-(L43-Pad2)": "Tight",
       "Net-(L44-Pad2)": "Tight",
       "Net-(L45-Pad2)": "Tight",
-      "Net-(L5-Pad2)": "Tight",
-      "Net-(L6-Pad2)": "Tight",
-      "Net-(L7-Pad2)": "Tight",
-      "Net-(L8-Pad2)": "Tight",
+      "Net-(L5-Pad2)": "Switched_Power",
+      "Net-(L6-Pad2)": "Switched_Power",
+      "Net-(L7-Pad2)": "Switched_Power",
+      "Net-(L8-Pad2)": "Switched_Power",
       "Net-(L9-Pad2)": "Tight"
     },
     "netclass_patterns": [
@@ -643,10 +662,6 @@
       {
         "netclass": "Power",
         "pattern": "VDC"
-      },
-      {
-        "netclass": "Tight",
-        "pattern": "*DOT*"
       }
     ]
   },
@@ -785,15 +800,15 @@
       "Braille_Cell"
     ],
     [
-      "55162da9-4257-4f57-9e38-bff5b99e84aa",
+      "9ec2229b-df24-4e2e-a5b1-f0877e53014a",
       "Braille_Cell1"
     ],
     [
-      "59cbbb5d-4a8b-420e-b7ff-ab92dead0067",
+      "c9bea2fb-0915-4df4-a518-feaf6c41a579",
       "Braille_Cell2"
     ],
     [
-      "69e1760a-9ce9-4dd2-bdb0-29d48ad2f691",
+      "a4e6a3ef-b583-4735-a144-3fe31d5a7d9a",
       "Braille_Cell3"
     ],
     [
