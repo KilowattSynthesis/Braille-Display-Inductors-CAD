@@ -2444,10 +2444,6 @@
 		(uuid "4667f6e2-d3a4-464f-a93d-269d1ee13d24")
 	)
 	(no_connect
-		(at 41.91 128.27)
-		(uuid "4813bf00-8956-4961-8e4e-e04f1fbfb7fb")
-	)
-	(no_connect
 		(at 43.18 54.61)
 		(uuid "50292b33-9342-4cb1-8616-b05630fcf160")
 	)
@@ -2458,10 +2454,6 @@
 	(no_connect
 		(at 30.48 33.02)
 		(uuid "6c643581-f466-48fc-bfaf-4d582cd3522c")
-	)
-	(no_connect
-		(at 41.91 120.65)
-		(uuid "9c29e4c8-bcb3-43a4-bcf0-66c6c17f38cb")
 	)
 	(no_connect
 		(at 68.58 90.17)
@@ -5834,142 +5826,6 @@
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
 					(reference "#PWR06")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 41.91 125.73 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c7cc8b5a-2116-4151-8a09-0ecfc41e69cc")
-		(property "Reference" "H8"
-			(at 44.45 123.1899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 44.45 125.7299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "00-project-footprints:Braille_Block_MountingHoles_M2_3x"
-			(at 41.91 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 41.91 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 41.91 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f0f9c956-0259-41d7-a462-f9c7b4e30b9b")
-		)
-		(instances
-			(project "Braille-Display-with-Inductor-Solenoids"
-				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 41.91 118.11 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cda9fddc-7535-4e2c-a3e2-7cd16d12f6e1")
-		(property "Reference" "H7"
-			(at 44.45 115.5699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 44.45 118.1099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "00-project-footprints:Braille_Block_MountingHoles_M2_3x"
-			(at 41.91 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 41.91 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 41.91 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "31000c9d-b1ab-410f-99fb-091626d53d07")
-		)
-		(instances
-			(project "Braille-Display-with-Inductor-Solenoids"
-				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H7")
 					(unit 1)
 				)
 			)
