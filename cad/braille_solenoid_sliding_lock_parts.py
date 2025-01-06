@@ -34,6 +34,10 @@ class GeneralSpec:
     dot_pitch_x: float = 2.5
     dot_pitch_y: float = 2.5
     cell_pitch_x: float = 6.0
+    cell_pitch_y: float = 10.0
+
+    dot_count_x: int = 2
+    dot_count_y: int = 4
 
     dot_hole_diameter: float = 1.7
     dot_diameter: float = 1.6
@@ -133,7 +137,7 @@ class GeneralSpec:
     @property
     def total_housing_y(self) -> float:
         """Total height of the braille housing."""
-        return self.dot_pitch_y * (3 - 1) + self.border_y * 2
+        return self.dot_pitch_y * (self.dot_count_y - 1) + self.border_y * 2
 
     @property
     def bottom_housing_thickness(self) -> float:
@@ -191,46 +195,47 @@ def make_full_housing(g_spec: GeneralSpec) -> bd.Part:
     )
 
     # Remove the braille dots.
-    for cell_x, cell_y in product(
+    for cell_x, cell_y, dot_offset_x, dot_offset_y in product(
         evenly_space_with_center(
             count=g_spec.cell_count_x,
             spacing=g_spec.cell_pitch_x,
         ),
         evenly_space_with_center(
             count=g_spec.cell_count_y,
+            spacing=g_spec.cell_pitch_y,
+        ),
+        [
+            *evenly_space_with_center(
+                count=g_spec.dot_count_x,
+                spacing=g_spec.dot_pitch_x,
+            ),
+            0,  # Center dot to remove icky bits.
+        ],
+        evenly_space_with_center(
+            count=g_spec.dot_count_y,
             spacing=g_spec.dot_pitch_y,
         ),
     ):
-        for dot_x, dot_y in product(
-            [
-                *evenly_space_with_center(
-                    count=2, spacing=g_spec.dot_pitch_x, center=cell_x
-                ),
-                cell_x,  # Center dot to remove icky bits.
-            ],
-            evenly_space_with_center(
-                count=3,
-                spacing=g_spec.dot_pitch_y,
-                center=cell_y,
-            ),
-        ):
-            # Remove the solenoid.
-            p -= bd.Cylinder(
-                radius=g_spec.solenoid_clearance_diameter / 2,
-                height=g_spec.solenoid_protrusion_from_pcb,
-                align=bde.align.ANCHOR_BOTTOM,
-            ).translate((dot_x, dot_y, 0))
+        dot_x = cell_x + dot_offset_x
+        dot_y = cell_y + dot_offset_y
 
-            # Skip the actual dot for this one.
-            if dot_x == cell_x:
-                continue
+        # Remove the solenoid.
+        p -= bd.Cylinder(
+            radius=g_spec.solenoid_clearance_diameter / 2,
+            height=g_spec.solenoid_protrusion_from_pcb,
+            align=bde.align.ANCHOR_BOTTOM,
+        ).translate((dot_x, dot_y, 0))
 
-            # Remove the braille dot.
-            p -= bd.Cylinder(
-                radius=g_spec.dot_hole_diameter / 2,
-                height=g_spec.total_housing_z,
-                align=bde.align.ANCHOR_BOTTOM,
-            ).translate((dot_x, dot_y, 0))
+        # Skip the actual dot for this one.
+        if dot_x == cell_x:
+            continue
+
+        # Remove the braille dot.
+        p -= bd.Cylinder(
+            radius=g_spec.dot_hole_diameter / 2,
+            height=g_spec.total_housing_z,
+            align=bde.align.ANCHOR_BOTTOM,
+        ).translate((dot_x, dot_y, 0))
 
     # Remove the mounting holes.
     for x_side, y_val in product([-1, 1], [0]):
@@ -394,38 +399,37 @@ def make_stencil_2d(
         ).translate((0, y_val))
 
     # Remove the holes. Each hole is a hull between the big and small circles.
-    for cell_x, cell_y in product(
+    for cell_x, cell_y, dot_offset_x, dot_offset_y in product(
         evenly_space_with_center(
             count=g_spec.cell_count_x,
             spacing=g_spec.cell_pitch_x,
         ),
         evenly_space_with_center(
             count=g_spec.cell_count_y,
+            spacing=g_spec.cell_pitch_y,
+        ),
+        evenly_space_with_center(
+            count=g_spec.dot_count_x,
+            spacing=g_spec.dot_pitch_x,
+        ),
+        evenly_space_with_center(
+            count=g_spec.dot_count_y,
             spacing=g_spec.dot_pitch_y,
         ),
     ):
-        for dot_x, dot_y in product(
-            evenly_space_with_center(
-                count=2,
-                spacing=g_spec.dot_pitch_x,
-                center=cell_x,
-            ),
-            evenly_space_with_center(
-                count=3,
-                spacing=g_spec.dot_pitch_y,
-                center=cell_y,
-            ),
-        ):
-            if not show_dot_holes:
-                continue
-            p -= bd.make_hull(
-                bd.Circle(g_spec.dot_hole_diameter / 2)
-                .translate((-g_spec.stencil_travel_distance / 2, 0))
-                .edges()
-                + bd.Circle(g_spec.dot_min_diameter / 2)
-                .translate((g_spec.stencil_travel_distance / 2, 0))
-                .edges()
-            ).translate((dot_x, dot_y))
+        dot_x = cell_x + dot_offset_x
+        dot_y = cell_y + dot_offset_y
+
+        if not show_dot_holes:
+            continue
+        p -= bd.make_hull(
+            bd.Circle(g_spec.dot_hole_diameter / 2)
+            .translate((-g_spec.stencil_travel_distance / 2, 0))
+            .edges()
+            + bd.Circle(g_spec.dot_min_diameter / 2)
+            .translate((g_spec.stencil_travel_distance / 2, 0))
+            .edges()
+        ).translate((dot_x, dot_y))
 
     # Remove the mounting screw slots.
     for x_val in evenly_space_with_center(
@@ -687,7 +691,7 @@ def make_many_assemblies(g_spec: GeneralSpec) -> bd.Part:
 if __name__ == "__main__":
     parts = {
         "dot_cluster": show(make_dot_cluster(GeneralSpec())),
-        "full_housing": (make_full_housing(GeneralSpec())),
+        "full_housing": show(make_full_housing(GeneralSpec())),
         "dot": (make_dot(GeneralSpec())),
         "bottom_housing": (make_bottom_housing(GeneralSpec())),
         "bottom_housing_0.3mm_solenoid": (
