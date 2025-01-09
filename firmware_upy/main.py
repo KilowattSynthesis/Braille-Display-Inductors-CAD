@@ -98,6 +98,26 @@ def make_shift_register_state_single_dot(*, cell_number: int, dot_number: int, s
 
     return shift_register_state
 
+def make_shift_register_list_of_cells(cell_states: list[tuple[str, str, str, str, str, str] | str]) -> list[bool]:
+    """Convert a list of cell states to a list of shift register states."""
+    shift_register_state = [False] * 48
+
+    for cell_number, cell_state in enumerate(cell_states):
+        if isinstance(cell_state, str):
+            cell_state = (cell_state, cell_state, cell_state, cell_state, cell_state, cell_state)
+
+        for dot_number, state in enumerate(cell_state):
+            base_offset = cell_number * 6*2 + dot_number * 2
+            in_a_in_b = {
+                "brake": (True, True),
+                "high-z": (False, False),
+                "pos": (True, False),
+                "neg": (False, True)
+            }[state]
+            shift_register_state[base_offset] = in_a_in_b[0]
+            shift_register_state[base_offset + 1] = in_a_in_b[1]
+
+    return shift_register_state
 
 def braille_demo() -> None:
     """Loop through each dot in each cells, and display it."""
@@ -113,19 +133,34 @@ def braille_demo() -> None:
                 set_shift_registers(shift_register_state)
                 time.sleep(1.5)
 
+def braille_demo_try_to_roll_sphere() -> None:
+    """Try to roll a sphere back and forth on a single cell."""
+    for row_num in (0, 1, 2, 1):
+        print(f"Row {row_num}")
+        cell_state = [
+            ("pos", "high-z", "high-z", "pos", "high-z", "high-z"),
+            ("high-z", "pos", "high-z", "high-z", "pos", "high-z"),
+            ("high-z", "high-z", "pos", "high-z", "high-z", "pos")
+        ][row_num]
+        shift_register_state = make_shift_register_list_of_cells([cell_state] + ["high-z"]*3)
+
+        set_shift_registers(shift_register_state)
+        time.sleep(4)
 
 def main() -> None:
     print("Starting init.")
     init_shift_register()
     print("Init complete.")
 
-    print("Starting basic demo.")
-    basic_demo()
-    print("Basic demo complete.")
+    if 0:
+        print("Starting basic demo.")
+        basic_demo()
+        print("Basic demo complete.")
 
-    print("Starting braille demo.")
-    braille_demo()
-    print("Braille demo complete.")
+    while 1:
+        print("Starting rolling sphere demo.")
+        braille_demo_try_to_roll_sphere()
+
 
 while True:
     main()
