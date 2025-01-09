@@ -563,12 +563,12 @@ def make_dot_cluster(g_spec: GeneralSpec) -> bd.Part:
 
     x_count = 3
     y_count = 3
-    x_spacing = 3
-    y_spacing = 3
+    x_spacing = 5
+    y_spacing = 5
 
     interface_height_z = 1
     # interface_width = g_spec.dot_diameter - 0.5  # Small dimension.
-    interface_width = 1.5  # Small dimension of block.
+    interface_width = 2.5  # Small dimension of block.
 
     bottom_box_thickness_z = 2
 
@@ -619,16 +619,16 @@ def make_dot_cluster(g_spec: GeneralSpec) -> bd.Part:
         ).translate((dot_x, dot_y, -bottom_box_thickness_z))
 
         # In the interface block, make the hole a legit gap.
-        p -= (
-            bd.Box(
-                interface_width,
-                g_spec.dot_magnet_diameter,
-                interface_height_z,
-                align=bde.align.ANCHOR_BOTTOM,
-            )
-            .rotate(axis=bd.Axis.Z, angle=45)
-            .translate((dot_x, dot_y, 0))
-        )
+        # p -= (
+        #     bd.Box(
+        #         interface_width,
+        #         g_spec.dot_magnet_diameter,
+        #         interface_height_z,
+        #         align=bde.align.ANCHOR_BOTTOM,
+        #     )
+        #     .rotate(axis=bd.Axis.Z, angle=45)
+        #     .translate((dot_x, dot_y, 0))
+        # )
 
     return p
 
@@ -708,7 +708,7 @@ def make_many_assemblies(g_spec: GeneralSpec) -> bd.Part:
 if __name__ == "__main__":
     parts = {
         "dot_cluster": show(make_dot_cluster(GeneralSpec())),
-        "full_housing": show(make_full_housing(GeneralSpec())),
+        "full_housing": (make_full_housing(GeneralSpec())),
         "dot": (make_dot(GeneralSpec())),
         "bottom_housing": (make_bottom_housing(GeneralSpec())),
         "bottom_housing_0.3mm_solenoid": (
