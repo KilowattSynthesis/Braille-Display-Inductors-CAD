@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "e119c01b-8921-4f49-92c0-65359687bb30")
 	(paper "USLetter")
 	(title_block
@@ -75,35 +75,17 @@
 				)
 			)
 			(symbol "74HC595_1_0"
-				(pin tri_state line
-					(at 10.16 7.62 180)
-					(length 2.54)
-					(name "QB"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin input line
-					(at -10.16 2.54 0)
+					(at -10.16 10.16 0)
 					(length 2.54)
-					(name "~{SRCLR}"
+					(name "SER"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "10"
+					(number "14"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -122,6 +104,24 @@
 						)
 					)
 					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "~{SRCLR}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -165,17 +165,35 @@
 						)
 					)
 				)
-				(pin input line
-					(at -10.16 10.16 0)
+				(pin power_in line
+					(at 0 15.24 270)
 					(length 2.54)
-					(name "SER"
+					(name "VCC"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "14"
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -17.78 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -201,17 +219,17 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at 0 15.24 270)
+				(pin tri_state line
+					(at 10.16 7.62 180)
 					(length 2.54)
-					(name "VCC"
+					(name "QB"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "16"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -327,24 +345,6 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at 0 -17.78 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin output line
 					(at 10.16 -12.7 180)
 					(length 2.54)
@@ -377,9 +377,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:C"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0.254)
 			)
@@ -452,7 +455,7 @@
 			(symbol "C_0_1"
 				(polyline
 					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
+						(xy -2.032 0.762) (xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -464,7 +467,7 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -513,12 +516,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+3V3"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -590,7 +598,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -602,7 +610,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -633,12 +641,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -729,7 +742,32 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(rectangle
+		(start 160.02 19.05)
+		(end 221.615 104.775)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid d43a8a4f-b7f3-4aaf-b786-a25e5328abbb)
+	)
+	(rectangle
+		(start 20.32 22.225)
+		(end 149.86 85.09)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid fc02cfde-a18e-47ac-a10e-fe23ad583deb)
 	)
 	(no_connect
 		(at 125.73 55.88)
@@ -1215,33 +1253,8 @@
 		)
 		(uuid "fd646bc8-d665-4108-9455-2a9810d263b4")
 	)
-	(rectangle
-		(start 160.02 19.05)
-		(end 221.615 104.775)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid d43a8a4f-b7f3-4aaf-b786-a25e5328abbb)
-	)
-	(rectangle
-		(start 20.32 22.225)
-		(end 149.86 85.09)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid fc02cfde-a18e-47ac-a10e-fe23ad583deb)
-	)
 	(label "CELL0_MAG_BOTTOM_B"
 		(at 165.1 33.02 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1252,7 +1265,6 @@
 	)
 	(label "CELL0_MAG_TOP_A"
 		(at 165.1 25.4 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1263,7 +1275,6 @@
 	)
 	(label "CELL1_MAG_TOP_A"
 		(at 85.09 43.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1274,7 +1285,6 @@
 	)
 	(label "CELL0_MAG_BOTTOM_B"
 		(at 85.09 40.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1285,7 +1295,6 @@
 	)
 	(label "CELL2_MAG_TOP_A"
 		(at 165.1 63.5 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1296,7 +1305,6 @@
 	)
 	(label "CELL2_MAG_TOP_B"
 		(at 165.1 66.04 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1307,7 +1315,6 @@
 	)
 	(label "CELL1_MAG_BOTTOM_B"
 		(at 85.09 50.8 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1318,7 +1325,6 @@
 	)
 	(label "CELL2_MAG_BOTTOM_B"
 		(at 147.32 40.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1329,7 +1335,6 @@
 	)
 	(label "CELL3_MAG_TOP_B"
 		(at 147.32 45.72 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1340,7 +1345,6 @@
 	)
 	(label "CELL2_MAG_BOTTOM_A"
 		(at 165.1 68.58 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1351,7 +1355,6 @@
 	)
 	(label "CELL0_MAG_TOP_A"
 		(at 85.09 33.02 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1362,7 +1365,6 @@
 	)
 	(label "CELL3_MAG_TOP_A"
 		(at 147.32 43.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1373,7 +1375,6 @@
 	)
 	(label "CELL2_MAG_BOTTOM_A"
 		(at 147.32 38.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1384,7 +1385,6 @@
 	)
 	(label "CELL1_MAG_TOP_B"
 		(at 85.09 45.72 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1395,7 +1395,6 @@
 	)
 	(label "CELL0_MAG_TOP_B"
 		(at 165.1 27.94 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1406,7 +1405,6 @@
 	)
 	(label "CELL1_MAG_TOP_A"
 		(at 165.1 44.45 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1417,7 +1415,6 @@
 	)
 	(label "CELL3_MAG_BOTTOM_A"
 		(at 147.32 48.26 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1428,7 +1425,6 @@
 	)
 	(label "CELL0_MAG_BOTTOM_A"
 		(at 165.1 30.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1439,7 +1435,6 @@
 	)
 	(label "CELL3_MAG_BOTTOM_B"
 		(at 165.1 91.44 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1450,7 +1445,6 @@
 	)
 	(label "CELL3_MAG_BOTTOM_A"
 		(at 165.1 88.9 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1461,7 +1455,6 @@
 	)
 	(label "CELL2_MAG_BOTTOM_B"
 		(at 165.1 71.12 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1472,7 +1465,6 @@
 	)
 	(label "CELL0_MAG_BOTTOM_A"
 		(at 85.09 38.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1483,7 +1475,6 @@
 	)
 	(label "CELL2_MAG_TOP_B"
 		(at 147.32 35.56 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1494,7 +1485,6 @@
 	)
 	(label "CELL3_MAG_TOP_A"
 		(at 165.1 83.82 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1505,7 +1495,6 @@
 	)
 	(label "CELL3_MAG_TOP_B"
 		(at 165.1 86.36 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1516,7 +1505,6 @@
 	)
 	(label "CELL0_MAG_TOP_B"
 		(at 85.09 35.56 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1527,7 +1515,6 @@
 	)
 	(label "CELL1_MAG_BOTTOM_A"
 		(at 165.1 49.53 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1538,7 +1525,6 @@
 	)
 	(label "CELL1_MAG_BOTTOM_B"
 		(at 165.1 52.07 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1549,7 +1535,6 @@
 	)
 	(label "CELL2_MAG_TOP_A"
 		(at 147.32 33.02 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1560,7 +1545,6 @@
 	)
 	(label "CELL1_MAG_TOP_B"
 		(at 165.1 46.99 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1571,7 +1555,6 @@
 	)
 	(label "CELL1_MAG_BOTTOM_A"
 		(at 85.09 48.26 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1582,7 +1565,6 @@
 	)
 	(label "CELL3_MAG_BOTTOM_B"
 		(at 147.32 50.8 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1594,7 +1576,6 @@
 	(hierarchical_label "SHIFT_SRCK"
 		(shape input)
 		(at 101.6 38.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1606,7 +1587,6 @@
 	(hierarchical_label "~{SHIFT_SRCLR}"
 		(shape input)
 		(at 39.37 40.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1618,7 +1598,6 @@
 	(hierarchical_label "SHIFT_SRCK"
 		(shape input)
 		(at 39.37 38.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1630,7 +1609,6 @@
 	(hierarchical_label "SHIFT_SER_IN"
 		(shape input)
 		(at 39.37 33.02 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1642,7 +1620,6 @@
 	(hierarchical_label "SHIFT_RCLK"
 		(shape input)
 		(at 101.6 45.72 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1654,7 +1631,6 @@
 	(hierarchical_label "SHIFT_RCLK"
 		(shape input)
 		(at 39.37 45.72 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1666,7 +1642,6 @@
 	(hierarchical_label "~{SHIFT_SRCLR}"
 		(shape input)
 		(at 101.6 40.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1678,7 +1653,6 @@
 	(hierarchical_label "~{SHIFT_OE}"
 		(shape input)
 		(at 101.6 48.26 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1690,7 +1664,6 @@
 	(hierarchical_label "~{SHIFT_OE}"
 		(shape input)
 		(at 39.37 48.26 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2586,6 +2559,10 @@
 	(sheet
 		(at 189.23 41.91)
 		(size 22.86 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -2615,43 +2592,43 @@
 		)
 		(pin "MAG_BOTTOM_A_CTRL" input
 			(at 189.23 49.53 180)
+			(uuid "d91bcea0-0e89-4f41-b056-2cf90b5f3ac2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "d91bcea0-0e89-4f41-b056-2cf90b5f3ac2")
 		)
 		(pin "MAG_BOTTOM_B_CTRL" input
 			(at 189.23 52.07 180)
+			(uuid "d149a3c2-a1be-4e87-b7d2-71729a961810")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "d149a3c2-a1be-4e87-b7d2-71729a961810")
 		)
 		(pin "MAG_TOP_A_CTRL" input
 			(at 189.23 44.45 180)
+			(uuid "7d95c9eb-c7bf-4902-8ec1-ff01afc582f9")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "7d95c9eb-c7bf-4902-8ec1-ff01afc582f9")
 		)
 		(pin "MAG_TOP_B_CTRL" input
 			(at 189.23 46.99 180)
+			(uuid "543f3815-564f-4159-8829-c7c05f5220d5")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "543f3815-564f-4159-8829-c7c05f5220d5")
 		)
 		(instances
 			(project "Braille-Display-with-Inductor-Solenoids"
@@ -2664,6 +2641,10 @@
 	(sheet
 		(at 189.23 81.28)
 		(size 22.86 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -2693,43 +2674,43 @@
 		)
 		(pin "MAG_BOTTOM_A_CTRL" input
 			(at 189.23 88.9 180)
+			(uuid "315e1e5c-9929-4fba-9c8f-94e084e9110a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "315e1e5c-9929-4fba-9c8f-94e084e9110a")
 		)
 		(pin "MAG_BOTTOM_B_CTRL" input
 			(at 189.23 91.44 180)
+			(uuid "1b000329-81e8-4841-8441-1f27d0749e16")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "1b000329-81e8-4841-8441-1f27d0749e16")
 		)
 		(pin "MAG_TOP_A_CTRL" input
 			(at 189.23 83.82 180)
+			(uuid "24b3bb2a-6ac0-4ec6-9998-d6161108e838")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "24b3bb2a-6ac0-4ec6-9998-d6161108e838")
 		)
 		(pin "MAG_TOP_B_CTRL" input
 			(at 189.23 86.36 180)
+			(uuid "2fdaaa9d-48d2-4394-88ab-38037eae649f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "2fdaaa9d-48d2-4394-88ab-38037eae649f")
 		)
 		(instances
 			(project "Braille-Display-with-Inductor-Solenoids"
@@ -2742,6 +2723,10 @@
 	(sheet
 		(at 189.23 60.96)
 		(size 22.86 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -2771,43 +2756,43 @@
 		)
 		(pin "MAG_BOTTOM_A_CTRL" input
 			(at 189.23 68.58 180)
+			(uuid "f412479f-8c38-4f11-b246-c936c496d469")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "f412479f-8c38-4f11-b246-c936c496d469")
 		)
 		(pin "MAG_BOTTOM_B_CTRL" input
 			(at 189.23 71.12 180)
+			(uuid "3994c924-de35-487b-bf1e-688f3e325e99")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "3994c924-de35-487b-bf1e-688f3e325e99")
 		)
 		(pin "MAG_TOP_A_CTRL" input
 			(at 189.23 63.5 180)
+			(uuid "8e04d021-3586-4dc7-b603-223d0a3fda17")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "8e04d021-3586-4dc7-b603-223d0a3fda17")
 		)
 		(pin "MAG_TOP_B_CTRL" input
 			(at 189.23 66.04 180)
+			(uuid "97d550ad-eb94-4101-8479-fbfdfad11d07")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "97d550ad-eb94-4101-8479-fbfdfad11d07")
 		)
 		(instances
 			(project "Braille-Display-with-Inductor-Solenoids"
@@ -2820,6 +2805,10 @@
 	(sheet
 		(at 189.23 22.86)
 		(size 22.86 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -2849,43 +2838,43 @@
 		)
 		(pin "MAG_BOTTOM_A_CTRL" input
 			(at 189.23 30.48 180)
+			(uuid "33bc924b-8306-46fa-a167-ea40943e444d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "33bc924b-8306-46fa-a167-ea40943e444d")
 		)
 		(pin "MAG_BOTTOM_B_CTRL" input
 			(at 189.23 33.02 180)
+			(uuid "2b29d0a1-2ee6-473c-9362-4733b02d1b6d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "2b29d0a1-2ee6-473c-9362-4733b02d1b6d")
 		)
 		(pin "MAG_TOP_A_CTRL" input
 			(at 189.23 25.4 180)
+			(uuid "0d0d95b9-1c8b-4372-9b8e-5170820f3d34")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "0d0d95b9-1c8b-4372-9b8e-5170820f3d34")
 		)
 		(pin "MAG_TOP_B_CTRL" input
 			(at 189.23 27.94 180)
+			(uuid "a97fd3a5-d3b8-4569-8778-da5bd1da5017")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "a97fd3a5-d3b8-4569-8778-da5bd1da5017")
 		)
 		(instances
 			(project "Braille-Display-with-Inductor-Solenoids"
