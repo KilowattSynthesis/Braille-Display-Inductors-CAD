@@ -499,7 +499,6 @@
         "bus_width": 12,
         "clearance": 0.25,
         "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -508,7 +507,7 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.8,
+        "track_width": 1.2,
         "via_diameter": 0.7,
         "via_drill": 0.3,
         "wire_width": 6
@@ -517,7 +516,6 @@
         "bus_width": 12,
         "clearance": 0.25,
         "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
         "microvia_diameter": 0.3,
@@ -526,7 +524,7 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.8,
+        "track_width": 1.0,
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
@@ -661,6 +659,9 @@
       "Net-(B4-5B)": "Tight",
       "Net-(B4-6B)": "Tight",
       "Net-(J3-Pin_1)": [
+        "Power"
+      ],
+      "Net-(J7-Pin_1)": [
         "Power"
       ],
       "Net-(L1-Pad2)": [
