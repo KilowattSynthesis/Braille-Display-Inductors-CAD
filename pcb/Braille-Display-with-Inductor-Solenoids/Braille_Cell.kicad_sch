@@ -5695,6 +5695,7 @@
 	(symbol
 		(lib_id "PCM_JLCPCB-Connectors_Buttons:Tactile Button, 160gf")
 		(at 228.6 147.32 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5702,7 +5703,7 @@
 		(dnp no)
 		(uuid "e93123f9-0d00-4bec-ae73-53000cc862e7")
 		(property "Reference" "S12"
-			(at 232.664 148.082 0)
+			(at 224.536 148.082 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5729,7 +5730,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_XKB-Connection-TS-1187A-B-A-B_C318884.pdf"
-			(at 226.314 147.193 0)
+			(at 230.886 147.193 0)
 			(effects
 				(font
 					(size 1.27 1.27)
