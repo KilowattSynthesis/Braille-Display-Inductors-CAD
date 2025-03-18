@@ -8,6 +8,7 @@
 replicate_layout.log
 ~*.lck
 **/production/backups
+production/
 
 # Temporary files
 *.000
